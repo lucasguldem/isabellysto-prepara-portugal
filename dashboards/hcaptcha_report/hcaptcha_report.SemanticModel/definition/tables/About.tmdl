@@ -1,0 +1,37 @@
+table About
+	lineageTag: 5c0d2a56-9770-4ef7-8620-f5080b84f848
+
+	column Key
+		dataType: string
+		lineageTag: 38176fbf-c6db-4f2d-ab9f-c10f98521f6b
+		summarizeBy: none
+		sourceColumn: Key
+
+	column Value
+		dataType: string
+		lineageTag: 81c2d81a-b6ff-420f-8158-66cb4edb7a1e
+		summarizeBy: none
+		sourceColumn: Value
+
+	column Order
+		dataType: int64
+		formatString: 0
+		lineageTag: 26c19df4-9fc6-46e7-98ab-fa7d4ab3cfe6
+		summarizeBy: none
+		sourceColumn: Order
+
+	partition About = m
+		mode: import
+		source =
+				let
+				    Source = #table({"Key", "Value"}, {
+				        {"Dataset", "hCaptcha Europe Positioning"},
+				        {"Source", "data/processed/*.csv"},
+				        {"Build", "Generated from scripts/build_hcaptcha_pbip.py"},
+				        {"Materialization", "Open hcaptcha_report.pbip in Power BI Desktop and save as .pbix"}
+				    }),
+				    #"Added Index" = Table.AddIndexColumn(Source, "Order", 1, 1, Int64.Type)
+				in
+				    #"Added Index"
+
+	annotation PBI_ResultType = Table

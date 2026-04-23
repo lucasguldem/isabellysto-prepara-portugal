@@ -1,0 +1,30 @@
+{
+  "name": "hcaptcha_theme",
+  "dataColors": [
+    "#0f766e",
+    "#1d4ed8",
+    "#ea580c",
+    "#64748b",
+    "#0f172a"
+  ],
+  "background": "#f8fafc",
+  "foreground": "#0f172a",
+  "tableAccent": "#0f766e",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "fontFamily": "Segoe UI",
+            "fontSize": 12,
+            "color": {
+              "solid": {
+                "color": "#0f172a"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

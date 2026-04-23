@@ -1,0 +1,47 @@
+table 'Role Category'
+	lineageTag: b0fa54e9-76c0-4b89-aa49-9f15fc22be5f
+
+	column role_category
+		dataType: string
+		isKey
+		lineageTag: 65aa0dfb-ac85-4b32-a746-cd0cf3bd9f5a
+		summarizeBy: none
+		sourceColumn: role_category
+
+	column lead_count
+		dataType: int64
+		formatString: 0
+		lineageTag: e6fce4dc-c774-47c6-b384-50d9f6c64fe0
+		summarizeBy: sum
+		sourceColumn: lead_count
+
+	column company_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 55cb18dc-2e66-49fc-81a5-7db4d573f493
+		summarizeBy: sum
+		sourceColumn: company_count
+
+	column lead_share
+		dataType: double
+		formatString: 0.0 %
+		lineageTag: 32116fcc-2ed0-4e38-9918-1efcdd2705d8
+		summarizeBy: none
+		sourceColumn: lead_share
+
+	partition 'Role Category' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "\\dim_role_category.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"role_category", type text},
+				        {"lead_count", Int64.Type},
+				        {"company_count", Int64.Type},
+				        {"lead_share", type number}
+				    })
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table

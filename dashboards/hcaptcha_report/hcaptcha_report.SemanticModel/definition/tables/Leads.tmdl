@@ -1,0 +1,185 @@
+table Leads
+	lineageTag: 1d3de8f6-9f99-4ac3-8a14-5f7c6290ec51
+
+	measure Leads = COUNTROWS('Leads')
+		formatString: #,##0
+		lineageTag: 7b5f9967-42cf-42d4-ac50-9be2040d6fbe
+
+	measure Companies = DISTINCTCOUNT('Leads'[company_name])
+		formatString: #,##0
+		lineageTag: 2af1ef4d-4e63-41b4-8adb-b7446466fda3
+
+	measure 'Countries In Scope' = DISTINCTCOUNT('Leads'[company_country])
+		formatString: #,##0
+		lineageTag: 4a08ce9f-2507-4ac6-9b26-f4908e71474c
+
+	measure 'Cross-Border Contacts' = CALCULATE([Leads], 'Leads'[contact_company_country_mismatch] = TRUE())
+		formatString: #,##0
+		lineageTag: f0f40b58-34a0-4167-b468-7c06db5e9a44
+
+	measure 'Cross-Border Share' = DIVIDE([Cross-Border Contacts], [Leads])
+		formatString: 0.0 %
+		lineageTag: bb2a6e8f-0dab-49eb-b1c3-2eff83d5242b
+
+	measure 'Executive Leads' = CALCULATE([Leads], 'Leads'[role_category] = "Executive / Technical Decision Maker")
+		formatString: #,##0
+		lineageTag: 427ef40c-cffd-47d4-9d7a-0cc4791543e1
+
+	measure 'Compliance Leads' = CALCULATE([Leads], 'Leads'[role_category] = "Data / Compliance")
+		formatString: #,##0
+		lineageTag: 3733ec84-4f7c-4b58-b7d7-e5287ffdd4f1
+
+	measure 'Enterprise Leads' = CALCULATE([Leads], 'Leads'[company_size_segment] = "3. Enterprise")
+		formatString: #,##0
+		lineageTag: aeeaa46b-8b73-4d52-85c5-9c95e4bfbeb6
+
+	measure 'Mid-Market Leads' = CALCULATE([Leads], 'Leads'[company_size_segment] = "2. Mid-Market")
+		formatString: #,##0
+		lineageTag: 66a5774a-bfb7-4667-b660-8d938efdbafd
+
+	measure 'Startup / SMB Leads' = CALCULATE([Leads], 'Leads'[company_size_segment] = "1. Startup / SMB")
+		formatString: #,##0
+		lineageTag: 7a6afdf5-1e16-4037-b924-4f1e90287f16
+
+	column email
+		dataType: string
+		lineageTag: 803e57bc-f808-497e-8d4e-68e8cc055e07
+		summarizeBy: none
+		sourceColumn: email
+
+	column email_status
+		dataType: string
+		lineageTag: 90f9238c-e677-4442-b865-466c7e116ff9
+		summarizeBy: none
+		sourceColumn: email_status
+
+	column full_name
+		dataType: string
+		lineageTag: 0e1b2d06-2f65-43d6-a9a4-5209b5c0567e
+		summarizeBy: none
+		sourceColumn: full_name
+
+	column job_title
+		dataType: string
+		lineageTag: f4720127-2526-42a8-8394-0c8dcc244fb2
+		summarizeBy: none
+		sourceColumn: job_title
+
+	column contact_country
+		dataType: string
+		lineageTag: 78f34266-a388-4d97-bb60-f0808ef8ac91
+		summarizeBy: none
+		sourceColumn: contact_country
+
+	column added_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e9ba6b8d-4fe7-4914-8280-f5403809ae95
+		summarizeBy: none
+		sourceColumn: added_at
+
+		annotation UnderlyingDateTimeDataType = DateTime
+
+	column company_name
+		dataType: string
+		lineageTag: 3274a1c5-6f05-4e69-af81-f99da82fcfa5
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: company_name
+
+	column company_size_raw
+		dataType: string
+		lineageTag: 425fe80f-a6e4-45a7-8757-032d0c0612ca
+		summarizeBy: none
+		sourceColumn: company_size_raw
+
+	column company_country
+		dataType: string
+		lineageTag: 89d8602e-fdcc-48df-9672-5b987467a7b2
+		summarizeBy: none
+		sourceColumn: company_country
+
+	column company_industry
+		dataType: string
+		lineageTag: 8753ac98-c459-4e95-a4ea-6ecdb5d7c68c
+		summarizeBy: none
+		sourceColumn: company_industry
+
+	column role_category
+		dataType: string
+		lineageTag: 8d21eb17-5adf-4c95-9a0d-f717b31b1a72
+		summarizeBy: none
+		sourceColumn: role_category
+
+	column company_size_segment
+		dataType: string
+		lineageTag: a0d5a563-bddc-459a-8150-748814eff89e
+		summarizeBy: none
+		sourceColumn: company_size_segment
+
+	column company_size_min
+		dataType: int64
+		formatString: 0
+		lineageTag: ad14c2c6-6246-470a-9eea-6d208777ff8c
+		summarizeBy: none
+		sourceColumn: company_size_min
+
+	column company_size_max
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f10b57e-c255-4c6d-83c4-658f9870d4f9
+		summarizeBy: none
+		sourceColumn: company_size_max
+
+	column is_email_valid
+		dataType: boolean
+		lineageTag: 71338875-b47f-4823-96c0-93a328ff68a2
+		summarizeBy: none
+		sourceColumn: is_email_valid
+
+	column is_european_company
+		dataType: boolean
+		lineageTag: c80e4b41-bf7a-4470-a73b-4b61c1ec41cd
+		summarizeBy: none
+		sourceColumn: is_european_company
+
+	column contact_company_country_mismatch
+		dataType: boolean
+		lineageTag: a035e017-c249-4cb6-8fed-18a76f26d202
+		summarizeBy: none
+		sourceColumn: contact_company_country_mismatch
+
+	partition Leads = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "\\hcaptcha_europe_gold.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"email", type text},
+				        {"email_status", type text},
+				        {"full_name", type text},
+				        {"job_title", type text},
+				        {"contact_country", type text},
+				        {"added_at", type datetime},
+				        {"company_name", type text},
+				        {"company_size_raw", type text},
+				        {"company_country", type text},
+				        {"company_industry", type text},
+				        {"role_category", type text},
+				        {"company_size_segment", type text},
+				        {"company_size_min", Int64.Type},
+				        {"company_size_max", Int64.Type},
+				        {"is_email_valid", type logical},
+				        {"is_european_company", type logical},
+				        {"contact_company_country_mismatch", type logical}
+				    }),
+				    #"Selected Columns" = Table.SelectColumns(#"Changed Type",{
+				        "email", "email_status", "full_name", "job_title", "contact_country", "added_at", "company_name",
+				        "company_size_raw", "company_country", "company_industry", "role_category", "company_size_segment",
+				        "company_size_min", "company_size_max", "is_email_valid", "is_european_company", "contact_company_country_mismatch"
+				    })
+				in
+				    #"Selected Columns"
+
+	annotation PBI_ResultType = Table

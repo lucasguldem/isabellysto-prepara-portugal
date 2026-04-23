@@ -1,0 +1,39 @@
+table 'Company Size'
+	lineageTag: 13b64b8b-403b-4c71-81d7-f10fb88d82c9
+
+	column company_size_segment
+		dataType: string
+		isKey
+		lineageTag: 1a9ef2d1-a415-4b77-b2dc-1a3d78f28fd5
+		summarizeBy: none
+		sourceColumn: company_size_segment
+
+	column lead_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 4475cb31-2cac-4afb-bb14-570f3d8f9040
+		summarizeBy: sum
+		sourceColumn: lead_count
+
+	column company_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 17329813-5d4c-459f-9589-b25d61fa4f37
+		summarizeBy: sum
+		sourceColumn: company_count
+
+	partition 'Company Size' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataRoot & "\\dim_company_size.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"company_size_segment", type text},
+				        {"lead_count", Int64.Type},
+				        {"company_count", Int64.Type}
+				    })
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table

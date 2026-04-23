@@ -1,0 +1,49 @@
+# Data and generated outputs
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/inbox/
+!data/raw/archive/
+!data/raw/quarantine/
+data/raw/inbox/*
+!data/raw/inbox/.gitkeep
+data/raw/archive/*
+!data/raw/archive/.gitkeep
+data/raw/quarantine/*
+!data/raw/quarantine/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+reports/quality/*
+!reports/quality/.gitkeep
+
+reports/ops/*
+!reports/ops/.gitkeep
+
+# Power BI binaries
+*.pbix
+*.pbit
+
+# Re-include versioned PBIP and local config JSONs even when a global gitignore blocks *.json
+!dashboards/**/*.json
+!dashboards/**/.pbixproj.json
+!dashboards/**/*.pbir
+!dashboards/**/*.pbidataset
+!dashboards/**/*.tmdl
+!config/**/*.json
+
+# Local toolchains and environments
+tools/
+.venv/
+.pytest_cache/
+.virtual_documents/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Local-only metadata
+.env
+.env.*
+.vscode/
+.idea/
+.codex
