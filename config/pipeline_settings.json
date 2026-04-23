@@ -1,0 +1,42 @@
+{
+  "directories": {
+    "raw_inbox": "data/raw/inbox",
+    "raw_archive": "data/raw/archive",
+    "raw_quarantine": "data/raw/quarantine",
+    "processed": "data/processed",
+    "quality": "reports/quality",
+    "ops": "reports/ops",
+    "gateway_mirror": "/mnt/c/Users/02luc/Documents/PowerBIData/hcaptcha/processed"
+  },
+  "thresholds": {
+    "missing_company_country_rate": {
+      "warning": 0.1,
+      "blocking": 0.2
+    },
+    "non_european_rate": {
+      "warning": 0.15,
+      "blocking": 0.35
+    },
+    "duplicate_rate": {
+      "warning": 0.15,
+      "blocking": 0.3,
+      "delta_warning": 0.1
+    },
+    "other_role_rate": {
+      "warning": 0.15,
+      "blocking": 0.3
+    },
+    "unknown_company_size_rate": {
+      "warning": 0.15,
+      "blocking": 0.3
+    },
+    "row_count_drop_rate": {
+      "warning": 0.2,
+      "blocking": 0.5
+    },
+    "row_count_growth_rate": {
+      "warning": 1.0,
+      "blocking": 2.0
+    }
+  }
+}

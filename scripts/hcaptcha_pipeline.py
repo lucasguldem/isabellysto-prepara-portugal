@@ -1,8 +1,14 @@
 from __future__ import annotations
 
+import argparse
+import json
 import re
+import shutil
 import unicodedata
+from datetime import UTC, datetime
 from pathlib import Path
+from tempfile import mkdtemp
+from typing import Any, Mapping
 
 import pandas as pd
 
@@ -107,6 +113,34 @@ COUNTRY_LOOKUP.update(COUNTRY_ALIASES)
 
 PRIVACY_FIRST_COUNTRIES = {"Germany", "France", "Belgium", "Austria", "Switzerland"}
 EFFICIENCY_FIRST_COUNTRIES = {"United Kingdom", "Ireland", "Estonia", "Lithuania"}
+
+
+DEFAULT_DIRECTORIES = {
+    "raw_inbox": "data/raw/inbox",
+    "raw_archive": "data/raw/archive",
+    "raw_quarantine": "data/raw/quarantine",
+    "processed": "data/processed",
+    "quality": "reports/quality",
+    "ops": "reports/ops",
+    "gateway_mirror": "/mnt/c/Users/02luc/Documents/PowerBIData/hcaptcha/processed",
+}
+
+
+DEFAULT_THRESHOLDS = {
+    "missing_company_country_rate": {"warning": 0.10, "blocking": 0.20},
+    "non_european_rate": {"warning": 0.15, "blocking": 0.35},
+    "duplicate_rate": {"warning": 0.15, "blocking": 0.30, "delta_warning": 0.10},
+    "other_role_rate": {"warning": 0.15, "blocking": 0.30},
+    "unknown_company_size_rate": {"warning": 0.15, "blocking": 0.30},
+    "row_count_drop_rate": {"warning": 0.20, "blocking": 0.50},
+    "row_count_growth_rate": {"warning": 1.00, "blocking": 2.00},
+}
+
+
+DEFAULT_SETTINGS = {
+    "directories": DEFAULT_DIRECTORIES,
+    "thresholds": DEFAULT_THRESHOLDS,
+}
 
 
 ROLE_RULES = [
@@ -459,3 +493,340 @@ def export_processed_outputs(clean_df: pd.DataFrame, output_dir: str | Path) -> 
     build_company_size_dimension(clean_df).to_csv(files["size_dim"], index=False)
     build_country_priority_dimension(clean_df).to_csv(files["country_dim"], index=False)
     return files
+
+
+def _deep_merge(base: Mapping[str, Any], override: Mapping[str, Any]) -> dict[str, Any]:
+    merged: dict[str, Any] = {key: value for key, value in base.items()}
+    for key, value in override.items():
+        if isinstance(value, Mapping) and isinstance(base.get(key), Mapping):
+            merged[key] = _deep_merge(base[key], value)
+        else:
+            merged[key] = value
+    return merged
+
+
+def load_settings(config_path: str | Path | None = None) -> dict[str, Any]:
+    settings = _deep_merge({}, DEFAULT_SETTINGS)
+    if config_path is None:
+        return settings
+
+    config_file = Path(config_path)
+    if not config_file.exists():
+        return settings
+
+    payload = json.loads(config_file.read_text(encoding="utf-8"))
+    return _deep_merge(settings, payload)
+
+
+def _safe_rate(numerator: int | float, denominator: int | float) -> float:
+    if not denominator:
+        return 0.0
+    return float(numerator) / float(denominator)
+
+
+def collect_quality_metrics(
+    raw_df: pd.DataFrame,
+    clean_df: pd.DataFrame,
+    previous_approved_row_count: int | None = None,
+    previous_duplicate_rate: float | None = None,
+) -> dict[str, float | int | None]:
+    duplicate_mask = raw_df.duplicated(subset=["E-mail", "Nome da empresa"], keep=False)
+    raw_rows = int(len(raw_df))
+    clean_rows = int(len(clean_df))
+    missing_company_country_rows = int(raw_df.get("País da empresa", pd.Series(dtype=object)).isna().sum())
+    non_european_rows = int(
+        raw_df.get("País da empresa", pd.Series(dtype=object)).map(is_european_country).fillna(False).eq(False).sum()
+    )
+    other_role_rows = int(clean_df.get("role_category", pd.Series(dtype=object)).eq("Other").sum())
+    unknown_company_size_rows = int(
+        clean_df.get("company_size_segment", pd.Series(dtype=object)).eq("4. Unknown").sum()
+    )
+
+    return {
+        "raw_rows": raw_rows,
+        "clean_rows": clean_rows,
+        "duplicate_rate": _safe_rate(int(duplicate_mask.sum()), raw_rows),
+        "missing_company_country_rate": _safe_rate(missing_company_country_rows, raw_rows),
+        "non_european_rate": _safe_rate(non_european_rows, raw_rows),
+        "other_role_rate": _safe_rate(other_role_rows, clean_rows),
+        "unknown_company_size_rate": _safe_rate(unknown_company_size_rows, clean_rows),
+        "previous_approved_row_count": previous_approved_row_count,
+        "previous_duplicate_rate": previous_duplicate_rate,
+    }
+
+
+def evaluate_quality_metrics(
+    raw_rows: int,
+    clean_rows: int,
+    duplicate_rate: float,
+    non_european_rate: float,
+    missing_company_country_rate: float,
+    other_role_rate: float,
+    unknown_company_size_rate: float,
+    previous_approved_row_count: int | None,
+    previous_duplicate_rate: float | None = None,
+    thresholds: Mapping[str, Mapping[str, float]] | None = None,
+) -> dict[str, Any]:
+    active_thresholds = thresholds or DEFAULT_THRESHOLDS
+    metrics = {
+        "raw_rows": raw_rows,
+        "clean_rows": clean_rows,
+        "duplicate_rate": duplicate_rate,
+        "non_european_rate": non_european_rate,
+        "missing_company_country_rate": missing_company_country_rate,
+        "other_role_rate": other_role_rate,
+        "unknown_company_size_rate": unknown_company_size_rate,
+    }
+
+    blocking_failures: list[str] = []
+    warnings: list[str] = []
+
+    def _evaluate_threshold(metric_name: str, value: float) -> None:
+        threshold = active_thresholds.get(metric_name, {})
+        blocking = threshold.get("blocking")
+        warning = threshold.get("warning")
+        if blocking is not None and value >= blocking:
+            blocking_failures.append(metric_name)
+            return
+        if warning is not None and value >= warning:
+            warnings.append(metric_name)
+
+    for metric_name in [
+        "duplicate_rate",
+        "non_european_rate",
+        "missing_company_country_rate",
+        "other_role_rate",
+        "unknown_company_size_rate",
+    ]:
+        _evaluate_threshold(metric_name, float(metrics[metric_name]))
+
+    if previous_duplicate_rate is not None:
+        duplicate_delta = duplicate_rate - previous_duplicate_rate
+        metrics["duplicate_rate_delta"] = duplicate_delta
+        delta_warning = active_thresholds.get("duplicate_rate", {}).get("delta_warning")
+        if delta_warning is not None and duplicate_delta >= delta_warning:
+            warnings.append("duplicate_rate_delta")
+
+    if previous_approved_row_count:
+        if clean_rows < previous_approved_row_count:
+            row_count_drop_rate = _safe_rate(previous_approved_row_count - clean_rows, previous_approved_row_count)
+            metrics["row_count_drop_rate"] = row_count_drop_rate
+            _evaluate_threshold("row_count_drop_rate", row_count_drop_rate)
+        elif clean_rows > previous_approved_row_count:
+            row_count_growth_rate = _safe_rate(clean_rows - previous_approved_row_count, previous_approved_row_count)
+            metrics["row_count_growth_rate"] = row_count_growth_rate
+            _evaluate_threshold("row_count_growth_rate", row_count_growth_rate)
+
+    return {
+        "decision": "quarantine" if blocking_failures else "approved",
+        "blocking_failures": blocking_failures,
+        "warnings": warnings,
+        "metrics": metrics,
+    }
+
+
+def load_previous_approved_metrics(quality_dir: str | Path) -> dict[str, float | int] | None:
+    history_path = Path(quality_dir) / "quality_history.csv"
+    if not history_path.exists():
+        return None
+
+    history_df = pd.read_csv(history_path)
+    if history_df.empty or "decision" not in history_df.columns:
+        return None
+
+    approved = history_df.loc[history_df["decision"] == "approved"]
+    if approved.empty:
+        return None
+
+    latest = approved.iloc[-1]
+    result: dict[str, float | int] = {}
+    if pd.notna(latest.get("clean_rows")):
+        result["clean_rows"] = int(latest["clean_rows"])
+    if pd.notna(latest.get("duplicate_rate")):
+        result["duplicate_rate"] = float(latest["duplicate_rate"])
+    return result or None
+
+
+def build_quality_report(
+    raw_df: pd.DataFrame,
+    clean_df: pd.DataFrame,
+    input_path: str | Path,
+    thresholds: Mapping[str, Mapping[str, float]] | None = None,
+    previous_approved_metrics: Mapping[str, float | int] | None = None,
+) -> dict[str, Any]:
+    previous_approved_metrics = previous_approved_metrics or {}
+    metrics = collect_quality_metrics(
+        raw_df=raw_df,
+        clean_df=clean_df,
+        previous_approved_row_count=(
+            int(previous_approved_metrics["clean_rows"]) if "clean_rows" in previous_approved_metrics else None
+        ),
+        previous_duplicate_rate=(
+            float(previous_approved_metrics["duplicate_rate"])
+            if "duplicate_rate" in previous_approved_metrics
+            else None
+        ),
+    )
+    evaluation = evaluate_quality_metrics(
+        raw_rows=int(metrics["raw_rows"]),
+        clean_rows=int(metrics["clean_rows"]),
+        duplicate_rate=float(metrics["duplicate_rate"]),
+        non_european_rate=float(metrics["non_european_rate"]),
+        missing_company_country_rate=float(metrics["missing_company_country_rate"]),
+        other_role_rate=float(metrics["other_role_rate"]),
+        unknown_company_size_rate=float(metrics["unknown_company_size_rate"]),
+        previous_approved_row_count=(
+            int(metrics["previous_approved_row_count"])
+            if metrics["previous_approved_row_count"] is not None
+            else None
+        ),
+        previous_duplicate_rate=(
+            float(metrics["previous_duplicate_rate"])
+            if metrics["previous_duplicate_rate"] is not None
+            else None
+        ),
+        thresholds=thresholds,
+    )
+    return {
+        "timestamp_utc": datetime.now(UTC).isoformat(),
+        "input_path": str(Path(input_path)),
+        "decision": evaluation["decision"],
+        "blocking_failures": evaluation["blocking_failures"],
+        "warnings": evaluation["warnings"],
+        "metrics": evaluation["metrics"],
+    }
+
+
+def write_quality_outputs(report: Mapping[str, Any], quality_dir: str | Path) -> dict[str, Path]:
+    quality_path = Path(quality_dir)
+    quality_path.mkdir(parents=True, exist_ok=True)
+
+    latest_path = quality_path / "latest_quality_report.json"
+    latest_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    history_path = quality_path / "quality_history.csv"
+    row = {
+        "timestamp_utc": report["timestamp_utc"],
+        "input_path": report["input_path"],
+        "decision": report["decision"],
+        "blocking_failures": "|".join(report["blocking_failures"]),
+        "warnings": "|".join(report["warnings"]),
+    }
+    for key, value in report["metrics"].items():
+        row[key] = value
+
+    history_df = pd.DataFrame([row])
+    if history_path.exists():
+        existing = pd.read_csv(history_path)
+        history_df = pd.concat([existing, history_df], ignore_index=True)
+    history_df.to_csv(history_path, index=False)
+
+    return {"latest_report": latest_path, "history": history_path}
+
+
+def _promote_staged_outputs(staged_files: Mapping[str, Path], output_dir: str | Path) -> dict[str, Path]:
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+
+    promoted: dict[str, Path] = {}
+    for key, staged_file in staged_files.items():
+        target = output_path / staged_file.name
+        staged_file.replace(target)
+        promoted[key] = target
+    return promoted
+
+
+def _cleanup_directory(path: str | Path) -> None:
+    target = Path(path)
+    if target.exists():
+        shutil.rmtree(target)
+
+
+def run_pipeline(
+    input_path: str | Path,
+    output_dir: str | Path,
+    quality_dir: str | Path,
+    config_path: str | Path | None = None,
+) -> dict[str, Any]:
+    settings = load_settings(config_path)
+    raw_df = load_raw_dataset(input_path)
+    clean_df = transform_dataset(raw_df)
+    previous_approved_metrics = load_previous_approved_metrics(quality_dir)
+    report = build_quality_report(
+        raw_df=raw_df,
+        clean_df=clean_df,
+        input_path=input_path,
+        thresholds=settings["thresholds"],
+        previous_approved_metrics=previous_approved_metrics,
+    )
+
+    staging_dir = Path(mkdtemp(prefix="hcaptcha_staging_", dir=str(Path(output_dir).parent.resolve())))
+    staged_files = export_processed_outputs(clean_df, staging_dir)
+    promoted_files: dict[str, Path] = {}
+
+    if report["decision"] == "approved":
+        promoted_files = _promote_staged_outputs(staged_files, output_dir)
+    _cleanup_directory(staging_dir)
+
+    quality_files = write_quality_outputs(report, quality_dir)
+
+    return {
+        "report": report,
+        "quality_files": quality_files,
+        "output_files": promoted_files,
+    }
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Run the hCaptcha ETL pipeline with quality gates.")
+    parser.add_argument("--input", required=True, help="Path to the raw CSV file.")
+    parser.add_argument(
+        "--output-dir",
+        default=DEFAULT_DIRECTORIES["processed"],
+        help="Directory where approved Gold outputs are promoted.",
+    )
+    parser.add_argument(
+        "--quality-dir",
+        default=DEFAULT_DIRECTORIES["quality"],
+        help="Directory for quality reports and history.",
+    )
+    parser.add_argument("--config", default=None, help="Optional JSON config file with thresholds and directories.")
+    parser.add_argument(
+        "--fail-on-quality-gate",
+        action="store_true",
+        help="Return exit code 1 when the load is quarantined.",
+    )
+    return parser
+
+
+def run_pipeline_command(args: argparse.Namespace) -> int:
+    result = run_pipeline(
+        input_path=args.input,
+        output_dir=args.output_dir,
+        quality_dir=args.quality_dir,
+        config_path=args.config,
+    )
+    report = result["report"]
+    print(
+        json.dumps(
+            {
+                "decision": report["decision"],
+                "blocking_failures": report["blocking_failures"],
+                "warnings": report["warnings"],
+            },
+            ensure_ascii=False,
+        )
+    )
+    if args.fail_on_quality_gate and report["decision"] != "approved":
+        return 1
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    return run_pipeline_command(args)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

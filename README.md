@@ -70,12 +70,47 @@ Optional local tooling used during development:
 python scripts/hcaptcha_pipeline.py \
   --input /path/to/export.csv \
   --output-dir data/processed \
-  --quality-dir reports/quality
+  --quality-dir reports/quality \
+  --config config/pipeline_settings.json
 ```
 
-### 4. Open the Power BI Project
+### 4. Process the inbox automatically
+
+One-shot mode:
+
+```bash
+python scripts/watcher.py --once --config config/pipeline_settings.json
+```
+
+Continuous watch mode:
+
+```bash
+python scripts/watcher.py --config config/pipeline_settings.json
+```
+
+### 5. Open the Power BI Project
 
 Open `dashboards/hcaptcha_report/hcaptcha_report.pbip` in Power BI Desktop, refresh the model, and save a local `.pbix` if needed.
+
+### 6. Prepare the Power BI Service deployment kit
+
+Validate local prerequisites:
+
+```bash
+python scripts/pbi_preflight.py --config config/pipeline_settings.json
+```
+
+Mirror approved outputs to the Windows gateway path:
+
+```bash
+python scripts/export_gateway_ready.py --config config/pipeline_settings.json
+```
+
+Preview the Power BI refresh request:
+
+```bash
+python scripts/pbi_refresh.py --dry-run
+```
 
 ## Power BI Service Readiness
 
