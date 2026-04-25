@@ -141,6 +141,7 @@ The repository currently contains:
 - the original hCaptcha market analysis implementation
 - the PBIP project used to materialize the dashboard in Power BI Desktop
 - operational design scaffolding for automated ingestion, quality gates, and Service refresh
+- the `sites/data-command-center` immersive 3D presentation site backed by a sanitized Level 2 JSON snapshot
 
 ## Notes
 
