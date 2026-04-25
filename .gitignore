@@ -38,6 +38,8 @@ tools/
 .venv/
 node_modules/
 dist/
+test-results/
+playwright-report/
 .pytest_cache/
 .virtual_documents/
 __pycache__/

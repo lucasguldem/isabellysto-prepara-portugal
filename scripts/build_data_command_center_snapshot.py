@@ -108,22 +108,44 @@ def _role_mix(group: pd.DataFrame) -> dict[str, int]:
     return {str(role): int(count) for role, count in counts.items()}
 
 
+def _dominant_value(group: pd.DataFrame, column: str, fallback: str, ignored: set[str] | None = None) -> str:
+    ignored_values = ignored or set()
+    values = (
+        group[column]
+        .dropna()
+        .astype(str)
+        .map(str.strip)
+        .loc[lambda series: (series != "") & ~series.isin(ignored_values)]
+    )
+    if values.empty:
+        return fallback
+    ranked = (
+        values.reset_index(drop=True)
+        .reset_index(name="value")
+        .groupby("value")
+        .agg(count=("index", "count"), first_seen=("index", "min"))
+        .sort_values(["count", "first_seen"], ascending=[False, True])
+    )
+    return str(ranked.index[0])
+
+
 def _build_companies(gold: pd.DataFrame, country_priority: pd.DataFrame) -> list[dict[str, Any]]:
     tier_by_country = country_priority.set_index("company_country")["priority_tier"].to_dict()
     angle_by_country = country_priority.set_index("company_country")["messaging_angle"].to_dict()
     recommendation_by_country = country_priority.set_index("company_country")["strategic_recommendation"].to_dict()
 
-    safe_columns = ["company_name", "company_country", "company_industry", "company_size_segment"]
+    named_companies = gold.loc[
+        gold["company_name"].notna() & (gold["company_name"].astype(str).str.strip() != "")
+    ].copy()
     companies: list[dict[str, Any]] = []
-    for values, group in gold.groupby(safe_columns, dropna=False):
-        company_name, company_country, company_industry, company_size_segment = values
-        country = "" if pd.isna(company_country) else str(company_country)
+    for company_name, group in named_companies.groupby("company_name", dropna=False):
+        country = _dominant_value(group, "company_country", "")
         companies.append(
             {
                 "company_name": "" if pd.isna(company_name) else str(company_name),
                 "company_country": country,
-                "company_industry": "Unknown" if pd.isna(company_industry) else str(company_industry),
-                "company_size_segment": "4. Unknown" if pd.isna(company_size_segment) else str(company_size_segment),
+                "company_industry": _dominant_value(group, "company_industry", "Unknown"),
+                "company_size_segment": _dominant_value(group, "company_size_segment", "4. Unknown", {"4. Unknown"}),
                 "lead_count": int(len(group)),
                 "role_mix": _role_mix(group),
                 "priority_tier": str(tier_by_country.get(country, "Tier 3")),

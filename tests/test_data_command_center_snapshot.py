@@ -48,9 +48,9 @@ def make_fixture_files(tmp_path: Path) -> SnapshotPaths:
                 "linkedin_url": "https://linkedin.com/in/person2",
                 "contact_location": "Lisbon, Portugal",
                 "company_name": "Acme Security",
-                "company_country": "Germany",
-                "company_industry": "Cybersecurity",
-                "company_size_segment": "3. Enterprise",
+                "company_country": "France",
+                "company_industry": "Security Software",
+                "company_size_segment": "4. Unknown",
                 "role_category": "Data / Compliance",
                 "contact_company_country_mismatch": True,
             },
@@ -80,6 +80,20 @@ def make_fixture_files(tmp_path: Path) -> SnapshotPaths:
                 "company_industry": "Data Infrastructure",
                 "company_size_segment": "1. Startup / SMB",
                 "role_category": "Data / Compliance",
+                "contact_company_country_mismatch": False,
+            },
+            {
+                "email": "person5@example.com",
+                "first_name": "No",
+                "last_name": "Company",
+                "full_name": "No Company",
+                "linkedin_url": "https://linkedin.com/in/person5",
+                "contact_location": "Paris, France",
+                "company_name": None,
+                "company_country": "France",
+                "company_industry": "Computer Software",
+                "company_size_segment": "1. Startup / SMB",
+                "role_category": "Other",
                 "contact_company_country_mismatch": False,
             },
         ]
@@ -180,12 +194,17 @@ def test_snapshot_preserves_aggregate_totals_and_company_records(tmp_path: Path)
 
     snapshot = build_snapshot(paths, generated_at="2026-04-25T00:00:00Z")
 
-    assert snapshot["metadata"]["source_rows"] == 4
+    assert snapshot["metadata"]["source_rows"] == 5
     assert snapshot["metadata"]["unique_companies"] == 3
     assert snapshot["market"][0]["company_country"] == "Germany"
     assert snapshot["market"][0]["lead_count"] == 2
     assert snapshot["companies"][0]["company_name"] == "Acme Security"
+    assert len(snapshot["companies"]) == snapshot["metadata"]["unique_companies"]
+    assert all(company["company_name"] for company in snapshot["companies"])
+    assert snapshot["companies"][0]["company_country"] == "Germany"
     assert snapshot["companies"][0]["lead_count"] == 2
+    assert snapshot["companies"][0]["company_industry"] == "Cybersecurity"
+    assert snapshot["companies"][0]["company_size_segment"] == "3. Enterprise"
     assert snapshot["companies"][0]["role_mix"] == {
         "Data / Compliance": 1,
         "Executive / Technical Decision Maker": 1,
