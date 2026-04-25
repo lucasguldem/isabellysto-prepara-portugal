@@ -1,7 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, lazy, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import BootSequence from './components/BootSequence';
-import CommandScene from './components/CommandScene';
 import InterfaceShell from './components/InterfaceShell';
 import {
   defaultFilters,
@@ -9,6 +8,8 @@ import {
   loadCommandCenterSnapshot,
 } from './lib/commandCenter';
 import type { CommandCenterFilters, CommandCenterSnapshot, StoryModule } from './types';
+
+const CommandScene = lazy(() => import('./components/CommandScene'));
 
 function EmptyState({ error }: { error: string }) {
   return (
@@ -69,13 +70,15 @@ export default function App() {
 
   return (
     <main className="app-shell">
-      <CommandScene
-        snapshot={snapshot}
-        activeModule={activeModule}
-        unlocked={unlocked}
-        selectedCountry={selectedCountry}
-        onSelectCountry={setSelectedCountry}
-      />
+      <Suspense fallback={<div className="scene-loading">Initializing 3D engine...</div>}>
+        <CommandScene
+          snapshot={snapshot}
+          activeModule={activeModule}
+          unlocked={unlocked}
+          selectedCountry={selectedCountry}
+          onSelectCountry={setSelectedCountry}
+        />
+      </Suspense>
       <InterfaceShell
         snapshot={snapshot}
         activeModule={activeModule}

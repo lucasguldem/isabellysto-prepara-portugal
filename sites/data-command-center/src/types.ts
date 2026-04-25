@@ -85,6 +85,7 @@ export type CommandCenterFilters = {
 
 export type CountrySceneNode = {
   country: string;
+  rank: number;
   leads: number;
   companies: number;
   tier: string;

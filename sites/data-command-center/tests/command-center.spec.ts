@@ -34,3 +34,20 @@ test('renders a nonblank 3D command center and unlocks exploration', async ({ pa
     fullPage: true,
   });
 });
+
+test('keeps the cockpit chrome compact around the 3D stage on desktop', async ({ page }) => {
+  await page.setViewportSize({ width: 1920, height: 980 });
+  await page.goto('/');
+  await page.getByRole('button', { name: /Enter Command Center/i }).click();
+
+  const topStatus = await page.locator('.top-status').boundingBox();
+  const moduleRail = await page.locator('.module-rail').boundingBox();
+  const bottomDock = await page.locator('.command-dock').boundingBox();
+  const sceneStage = await page.locator('[data-testid="scene-stage"]').boundingBox();
+
+  expect(topStatus?.height).toBeLessThanOrEqual(78);
+  expect(moduleRail?.width).toBeLessThanOrEqual(92);
+  expect(bottomDock?.height).toBeLessThanOrEqual(230);
+  expect(sceneStage?.width).toBeGreaterThan(1300);
+  expect(sceneStage?.height).toBeGreaterThan(700);
+});

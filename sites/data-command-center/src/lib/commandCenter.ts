@@ -61,8 +61,8 @@ export function getFilteredCompanies(
 
 export function createCountrySceneLayout(market: MarketCountry[]): CountrySceneNode[] {
   const maxLeads = Math.max(...market.map((country) => country.lead_count), 1);
-  const heightScale = scaleLinear().domain([0, maxLeads]).range([0.65, 4.8]);
-  const radiusScale = scaleLinear().domain([0, maxLeads]).range([0.18, 0.62]);
+  const heightScale = scaleLinear().domain([0, maxLeads]).range([0.55, 3.7]);
+  const radiusScale = scaleLinear().domain([0, maxLeads]).range([0.14, 0.46]);
 
   return [...market]
     .sort((a, b) => a.country_rank - b.country_rank)
@@ -78,6 +78,7 @@ export function createCountrySceneLayout(market: MarketCountry[]): CountrySceneN
       const height = heightScale(country.lead_count);
       return {
         country: country.company_country,
+        rank: country.country_rank,
         leads: country.lead_count,
         companies: country.company_count,
         tier: country.priority_tier,

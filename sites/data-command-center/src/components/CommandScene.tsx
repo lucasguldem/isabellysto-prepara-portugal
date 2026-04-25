@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Grid, Line, OrbitControls, Text } from '@react-three/drei';
+import { Billboard, Float, Grid, Line, OrbitControls, Text } from '@react-three/drei';
 import * as THREE from 'three';
 import { createCountrySceneLayout } from '../lib/commandCenter';
 import type { CommandCenterSnapshot, CountrySceneNode, StoryModule } from '../types';
@@ -61,6 +61,7 @@ function CountryBar({
     }
   });
   const opacity = muted ? 0.28 : selected ? 1 : 0.72;
+  const showLabel = selected || node.rank <= 5;
   return (
     <group>
       <mesh
@@ -80,15 +81,20 @@ function CountryBar({
           metalness={0.25}
         />
       </mesh>
-      <Text
-        position={[node.position[0], node.height + 0.38, node.position[2]]}
-        fontSize={0.16}
-        color={selected ? '#f8fafc' : node.color}
-        anchorX="center"
-        anchorY="middle"
-      >
-        {node.country}
-      </Text>
+      {showLabel && (
+        <Billboard position={[node.position[0], node.height + 0.28, node.position[2]]}>
+          <Text
+            fontSize={selected ? 0.15 : 0.115}
+            color={selected ? '#f8fafc' : node.color}
+            anchorX="center"
+            anchorY="middle"
+            outlineWidth={0.006}
+            outlineColor="#020617"
+          >
+            {node.country}
+          </Text>
+        </Billboard>
+      )}
     </group>
   );
 }
@@ -185,11 +191,12 @@ export default function CommandScene({
     <div className="scene-stage" data-testid="scene-stage">
       <Canvas
         data-testid="command-canvas"
-        camera={{ position: unlocked ? [0, 7.4, 10.5] : [0.5, 5.5, 8.5], fov: 46 }}
+        camera={{ position: unlocked ? [4.6, 5.8, 8.5] : [4.1, 4.9, 7.7], fov: 40 }}
+        dpr={[1, 1.45]}
         gl={{ antialias: true, alpha: false, preserveDrawingBuffer: true }}
         onCreated={({ gl }) => gl.setClearColor('#020617')}
       >
-        <fog attach="fog" args={['#020617', 8, 18]} />
+        <fog attach="fog" args={['#020617', 7, 17]} />
         <ambientLight intensity={0.32} />
         <pointLight position={[0, 6, 0]} intensity={85} color="#22d3ee" />
         <pointLight position={[-4, 4, 5]} intensity={45} color="#a78bfa" />
@@ -205,16 +212,18 @@ export default function CommandScene({
           fadeStrength={1.4}
           position={[0, -0.02, 0]}
         />
-        <CentralHub activeModule={activeModule} />
-        <CountryLayer
-          nodes={nodes}
-          selectedCountry={selectedCountry}
-          activeModule={activeModule}
-          onSelectCountry={onSelectCountry}
-        />
-        <PersonaMatrix snapshot={snapshot} activeModule={activeModule} />
-        <RecommendationArcs nodes={nodes} activeModule={activeModule} />
-        {unlocked && <OrbitControls enablePan={false} minDistance={5} maxDistance={14} maxPolarAngle={Math.PI / 2.05} />}
+        <group position={[0, -0.18, -0.35]}>
+          <CentralHub activeModule={activeModule} />
+          <CountryLayer
+            nodes={nodes}
+            selectedCountry={selectedCountry}
+            activeModule={activeModule}
+            onSelectCountry={onSelectCountry}
+          />
+          <PersonaMatrix snapshot={snapshot} activeModule={activeModule} />
+          <RecommendationArcs nodes={nodes} activeModule={activeModule} />
+        </group>
+        {unlocked && <OrbitControls target={[0, 1.1, 0]} enablePan={false} minDistance={5} maxDistance={14} maxPolarAngle={Math.PI / 2.05} />}
       </Canvas>
     </div>
   );

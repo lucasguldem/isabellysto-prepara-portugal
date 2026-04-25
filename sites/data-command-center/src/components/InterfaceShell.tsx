@@ -88,7 +88,7 @@ export default function InterfaceShell({
         <div className="status-metrics">
           <span>{snapshot.metadata.source_rows} leads</span>
           <span>{snapshot.metadata.unique_companies} companies</span>
-          <span>{snapshot.metadata.privacy_level}</span>
+          <span>Level 2 safe data</span>
         </div>
       </header>
 
@@ -100,21 +100,31 @@ export default function InterfaceShell({
               key={module.id}
               className={activeModule === module.id ? 'active' : ''}
               onClick={() => onModuleChange(module.id)}
+              aria-label={module.label}
               title={module.label}
             >
               <Icon size={19} />
-              <span>{module.label}</span>
+              <span className="nav-label">{module.label}</span>
             </button>
           );
         })}
       </nav>
 
-      <motion.aside
-        className="right-stack"
-        initial={{ opacity: 0, x: 22 }}
-        animate={{ opacity: 1, x: 0 }}
+      <motion.section
+        className="filter-bar"
+        initial={false}
+        animate={{ opacity: unlocked ? 1 : 0, y: unlocked ? 0 : -10, pointerEvents: unlocked ? 'auto' : 'none' }}
       >
-        <HologramPanel eyebrow="Selected Market" title={market.company_country}>
+        <span className="filter-state">Filters Online</span>
+        <SelectField label="Country" value={filters.country} options={countries} onChange={(country) => onFiltersChange({ ...filters, country })} />
+        <SelectField label="Tier" value={filters.tier} options={tiers} onChange={(tier) => onFiltersChange({ ...filters, tier })} />
+        <SelectField label="Size" value={filters.companySize} options={sizes} onChange={(companySize) => onFiltersChange({ ...filters, companySize })} />
+        <SelectField label="Role" value={filters.roleCategory} options={roles} onChange={(roleCategory) => onFiltersChange({ ...filters, roleCategory })} />
+        <SelectField label="Angle" value={filters.messagingAngle} options={angles} onChange={(messagingAngle) => onFiltersChange({ ...filters, messagingAngle })} />
+      </motion.section>
+
+      <section className="command-dock">
+        <HologramPanel className="market-panel" eyebrow="Selected Market" title={market.company_country}>
           <div className="metric-grid">
             <div>
               <span>Leads</span>
@@ -145,44 +155,35 @@ export default function InterfaceShell({
           </select>
         </HologramPanel>
 
-        <HologramPanel eyebrow="Company Hologram" title="Top Safe Accounts">
+        <HologramPanel className="console-panel" eyebrow="Narrative Console" title="System Logs">
+          {copy.map((line, index) => (
+            <p key={`${line}-${index}`}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              {line}
+            </p>
+          ))}
+        </HologramPanel>
+
+        <HologramPanel className="accounts-panel" eyebrow="Company Hologram" title="Top Safe Accounts">
           <div className="company-list">
-            {companies.slice(0, 6).map((company) => (
+            {companies.slice(0, 5).map((company) => (
               <article key={`${company.company_name}-${company.company_country}`}>
-                <strong>{company.company_name}</strong>
-                <span>{company.company_country} / {company.company_size_segment.replace(/^\d+\.\s*/, '')}</span>
-                <small>{company.company_industry}</small>
+                <div>
+                  <strong>{company.company_name}</strong>
+                  <span>{company.company_country} / {company.company_size_segment.replace(/^\d+\.\s*/, '')}</span>
+                </div>
+                <small>{company.lead_count} leads</small>
               </article>
             ))}
           </div>
+          {!unlocked && (
+            <button className="primary-action compact-action" onClick={onUnlock}>
+              <Eye size={16} />
+              Unlock Exploration
+            </button>
+          )}
         </HologramPanel>
-      </motion.aside>
-
-      <HologramPanel className="console-panel" eyebrow="Narrative Console" title="System Logs">
-        {copy.map((line, index) => (
-          <p key={`${line}-${index}`}>
-            <span>{String(index + 1).padStart(2, '0')}</span>
-            {line}
-          </p>
-        ))}
-      </HologramPanel>
-
-      <HologramPanel className="left-filters" eyebrow="Exploration Layer" title={unlocked ? 'Filters Online' : 'Locked'}>
-        {unlocked ? (
-          <div className="filter-grid">
-            <SelectField label="Country" value={filters.country} options={countries} onChange={(country) => onFiltersChange({ ...filters, country })} />
-            <SelectField label="Tier" value={filters.tier} options={tiers} onChange={(tier) => onFiltersChange({ ...filters, tier })} />
-            <SelectField label="Size" value={filters.companySize} options={sizes} onChange={(companySize) => onFiltersChange({ ...filters, companySize })} />
-            <SelectField label="Role" value={filters.roleCategory} options={roles} onChange={(roleCategory) => onFiltersChange({ ...filters, roleCategory })} />
-            <SelectField label="Angle" value={filters.messagingAngle} options={angles} onChange={(messagingAngle) => onFiltersChange({ ...filters, messagingAngle })} />
-          </div>
-        ) : (
-          <button className="primary-action" onClick={onUnlock}>
-            <Eye size={17} />
-            Unlock Exploration
-          </button>
-        )}
-      </HologramPanel>
+      </section>
     </div>
   );
 }
