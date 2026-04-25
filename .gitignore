@@ -31,10 +31,13 @@ reports/ops/*
 !dashboards/**/*.pbidataset
 !dashboards/**/*.tmdl
 !config/**/*.json
+!sites/**/*.json
 
 # Local toolchains and environments
 tools/
 .venv/
+node_modules/
+dist/
 .pytest_cache/
 .virtual_documents/
 __pycache__/
