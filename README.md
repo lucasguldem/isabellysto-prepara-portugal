@@ -8,7 +8,7 @@ A pergunta central do projeto é: **como a hCaptcha deve se posicionar no mercad
 
 ## Relatório Analítico
 
-O README foi estruturado para funcionar como uma entrega visível no GitHub: descreve a base raw, mostra o tratamento aplicado, documenta a qualidade dos dados, apresenta o modelo semântico e exibe prévias visuais do dashboard.
+Esta seção concentra a leitura dos dados: origem da planilha, tratamento aplicado, controles de qualidade e achados estratégicos.
 
 ### Descrição do Dataset
 
@@ -16,7 +16,7 @@ A análise parte da planilha original do desafio, mantida localmente como [`Plan
 
 <img src="reports/figures/00_readme_dataset_overview.png" alt="Descrição visual do dataset" width="100%"/>
 
-O arquivo raw contém campos pessoais e empresariais como e-mail, status do e-mail, nome do contato, cargo, país do contato, nome da empresa, porte da empresa, país da empresa, cidade da empresa, setor da empresa e classificação. A análise pública evita expor dados pessoais nos artefatos de apresentação; o Power BI e o site usam agregações, dimensões e snapshots sanitizados.
+O arquivo raw contém campos pessoais e empresariais como e-mail, status do e-mail, nome do contato, cargo, país do contato, nome da empresa, porte da empresa, país da empresa, cidade da empresa, setor da empresa e classificação.
 
 ### Tratamento e Harmonização
 
@@ -93,7 +93,7 @@ erDiagram
 
 ## Dashboard e Visualizações
 
-O GitHub não executa relatórios Power BI interativos dentro do README. Como este projeto usa Power BI Desktop gratuito, a entrega visual no GitHub é feita com prévias estáticas geradas a partir dos mesmos CSVs processados que alimentam o PBIP. As imagens seguem a identidade pixel art da apresentação pública para manter consistência visual entre README, dashboard e defesa. O relatório interativo completo está versionado em [`powerbi/hcaptcha-positioning/hcaptcha_report.pbip`](powerbi/hcaptcha-positioning/hcaptcha_report.pbip).
+O GitHub não executa relatórios Power BI interativos dentro do README. Como este projeto usa Power BI Desktop gratuito, sem dependência de Power BI Service ou Publish to web, a entrega visual no GitHub é feita com prévias estáticas geradas a partir dos mesmos CSVs processados que alimentam o PBIP. As imagens seguem a identidade pixel art da apresentação pública, e o relatório interativo completo está versionado em [`powerbi/hcaptcha-positioning/hcaptcha_report.pbip`](powerbi/hcaptcha-positioning/hcaptcha_report.pbip).
 
 ### Prévia das Páginas do Power BI
 
@@ -135,13 +135,13 @@ As figuras abaixo são geradas pelo notebook e resumem os principais cortes usad
 
 ## Estrutura do Repositório
 
-- `scripts/`: pipeline ETL, geração de assets do README, geração do PBIP e automações operacionais
-- `tests/`: cobertura pytest para transformações, Power BI e scripts operacionais
+- `scripts/`: pipeline ETL, geração de assets do README, geração do PBIP e automações locais
+- `tests/`: cobertura pytest para transformações, Power BI e snapshots de apresentação
 - `notebooks/`: análise exploratória e geração das figuras principais
 - `powerbi/`: projeto Power BI versionável em formato `PBIP`/`TMDL`
 - `apps/`: apresentação pública em React/Vite e assets de entrega
 - `reports/`: relatório executivo, figuras, glossário, roteiro do apresentador e logs
-- `docs/`: blueprints, notas do modelo semântico e runbooks operacionais
+- `docs/`: blueprints, notas do modelo semântico e runbooks
 - `data/`: diretórios locais de dados raw e processados, ignorados no Git por desenho
 
 ## Como Executar
@@ -210,10 +210,10 @@ Exportações reais de leads podem conter dados pessoais como nomes, e-mails, Li
 - `data/raw/` e `data/processed/` são ignorados pelo Git;
 - arquivos `.pbix` binários são ignorados;
 - o repositório mantém o projeto Power BI em formato versionável `PBIP`;
-- o site público usa snapshot sanitizado e agregações;
+- a apresentação pública usa snapshot sanitizado e agregações;
 - credenciais e variáveis locais devem ficar fora do repositório.
 
-## Artefatos de Entrega
+## Artefatos Principais
 
 - Power BI: [`powerbi/hcaptcha-positioning/hcaptcha_report.pbip`](powerbi/hcaptcha-positioning/hcaptcha_report.pbip)
 - Relatório executivo: [`reports/hcaptcha_positioning_summary.md`](reports/hcaptcha_positioning_summary.md)
@@ -222,19 +222,3 @@ Exportações reais de leads podem conter dados pessoais como nomes, e-mails, Li
 - Apresentação pública: [`apps/hcaptcha-course-presentation`](apps/hcaptcha-course-presentation)
 - Blueprint do dashboard: [`docs/powerbi/dashboard_blueprint.md`](docs/powerbi/dashboard_blueprint.md)
 - Notas do modelo semântico: [`docs/modeling/semantic_model_notes.md`](docs/modeling/semantic_model_notes.md)
-
-## Status Atual
-
-O repositório contém:
-
-- implementação original da análise de mercado hCaptcha Europa;
-- pipeline ETL testado com quality gates;
-- outputs Gold e dimensões para Power BI;
-- projeto Power BI em `PBIP` com visuais nativos, medidas e filtros;
-- relatório executivo e figuras analíticas;
-- apresentação pública interativa com snapshot sanitizado;
-- automações para watcher e exportação local dos dados processados.
-
-## Observações
-
-Este projeto não depende de assinatura Power BI Service. A exploração interativa é feita no Power BI Desktop gratuito a partir do arquivo `PBIP`; o GitHub exibe prévias estáticas para tornar o projeto compreensível sem abrir ferramentas externas.
