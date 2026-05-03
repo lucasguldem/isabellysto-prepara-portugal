@@ -13,23 +13,37 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from matplotlib.patches import FancyBboxPatch
+from matplotlib.patches import Rectangle
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
 FIGURES_DIR = PROJECT_ROOT / "reports" / "figures"
 
-BG = "#F7F4EE"
-PANEL = "#FFFCF7"
-INK = "#17212B"
-MUTED = "#5D6B72"
-GRID = "#E3D8C8"
-TEAL = "#0B6B5F"
-ORANGE = "#D88A28"
-BLUE = "#183A59"
-PURPLE = "#7A5CFF"
-RED = "#C25132"
+BG = "#FFF7DC"
+PANEL = "#FFFDF4"
+PANEL_ALT = "#FFF9E8"
+INK = "#182126"
+SHADOW = "#0D1215"
+MUTED = "#40545C"
+GRID = "#D7CBB6"
+TEAL = "#24A99A"
+ORANGE = "#F0B429"
+BLUE = "#2E68D6"
+PURPLE = "#7252B8"
+RED = "#DF5A44"
+LEAF = "#94BD3F"
+
+plt.rcParams.update(
+    {
+        "font.family": "DejaVu Sans Mono",
+        "axes.titleweight": "bold",
+        "axes.labelcolor": INK,
+        "xtick.color": INK,
+        "ytick.color": INK,
+        "text.color": INK,
+    }
+)
 
 
 def _load_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
@@ -40,18 +54,89 @@ def _load_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame
     return gold, country, role, size
 
 
-def _style_axis(ax: plt.Axes) -> None:
+def _add_pixel_grid(fig: plt.Figure) -> None:
+    for x in [i / 18 for i in range(1, 18)]:
+        fig.lines.append(
+            plt.Line2D([x, x], [0, 1], transform=fig.transFigure, color=INK, alpha=0.045, linewidth=0.8, zorder=-20)
+        )
+    for y in [i / 14 for i in range(1, 14)]:
+        fig.lines.append(
+            plt.Line2D([0, 1], [y, y], transform=fig.transFigure, color="#FFFFFF", alpha=0.24, linewidth=0.8, zorder=-20)
+        )
+
+
+def _add_pixel_mosaic(fig: plt.Figure, x: float = 0.86, y: float = 0.88, scale: float = 1.0, alpha: float = 0.92) -> None:
+    size = 0.012 * scale
+    gap = 0.003 * scale
+    pattern = [
+        (0, 0, BLUE),
+        (1, 0, ORANGE),
+        (2, 0, TEAL),
+        (0.5, -1, RED),
+        (1.5, -1, PURPLE),
+        (2.5, -1, LEAF),
+        (1, -2, INK),
+        (2, -2, BLUE),
+    ]
+    for col, row, color in pattern:
+        fig.patches.append(
+            Rectangle(
+                (x + col * (size + gap), y + row * (size + gap)),
+                size,
+                size,
+                transform=fig.transFigure,
+                facecolor=color,
+                edgecolor="none",
+                alpha=alpha,
+                zorder=-2,
+            )
+        )
+
+
+def _panel_shadow(fig: plt.Figure, ax: plt.Axes, dx: float = 0.006, dy: float = -0.008) -> None:
+    bbox = ax.get_position()
+    fig.patches.extend(
+        [
+            Rectangle(
+                (bbox.x0 + dx, bbox.y0 + dy),
+                bbox.width,
+                bbox.height,
+                transform=fig.transFigure,
+                facecolor=SHADOW,
+                edgecolor="none",
+                zorder=-7,
+            ),
+            Rectangle(
+                (bbox.x0, bbox.y0),
+                bbox.width,
+                bbox.height,
+                transform=fig.transFigure,
+                facecolor=PANEL,
+                edgecolor=INK,
+                linewidth=2.2,
+                zorder=-6,
+            ),
+        ]
+    )
+
+
+def _style_axis(ax: plt.Axes, fig: plt.Figure | None = None, *, grid_axis: str = "x") -> None:
+    if fig is not None:
+        _panel_shadow(fig, ax)
     ax.set_facecolor(PANEL)
     for spine in ax.spines.values():
-        spine.set_color(GRID)
-    ax.tick_params(colors=INK, labelsize=9)
-    ax.grid(axis="x", color=GRID, linewidth=0.8)
+        spine.set_color(INK)
+        spine.set_linewidth(2.1)
+    ax.tick_params(colors=INK, labelsize=9, width=1.6)
+    ax.grid(axis=grid_axis, color=GRID, linewidth=0.9)
     ax.set_axisbelow(True)
 
 
 def _add_title(fig: plt.Figure, title: str, subtitle: str | None = None) -> None:
     fig.patch.set_facecolor(BG)
-    fig.text(0.04, 0.94, title, fontsize=20, fontweight="bold", color=INK)
+    _add_pixel_grid(fig)
+    _add_pixel_mosaic(fig)
+    fig.text(0.04, 0.94, title.upper(), fontsize=20, fontweight="black", color=INK)
     if subtitle:
         fig.text(0.04, 0.895, subtitle, fontsize=10.5, color=MUTED)
 
@@ -66,20 +151,20 @@ def _save(fig: plt.Figure, filename: str) -> Path:
 
 def _card(ax: plt.Axes, label: str, value: str, detail: str = "", color: str = TEAL) -> None:
     ax.axis("off")
-    box = FancyBboxPatch(
-        (0.02, 0.08),
-        0.96,
-        0.84,
-        boxstyle="round,pad=0.02,rounding_size=0.04",
-        linewidth=1,
-        edgecolor=GRID,
-        facecolor=PANEL,
-    )
-    ax.add_patch(box)
-    ax.text(0.09, 0.68, label.upper(), fontsize=8.5, color=MUTED, fontweight="bold")
-    ax.text(0.09, 0.38, value, fontsize=22, color=color, fontweight="bold")
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.add_patch(Rectangle((0.08, 0.04), 0.88, 0.78, facecolor=SHADOW, edgecolor="none", zorder=0))
+    ax.add_patch(Rectangle((0.02, 0.12), 0.88, 0.78, facecolor=PANEL, edgecolor=INK, linewidth=2.6, zorder=1))
+    ax.add_patch(Rectangle((0.76, 0.14), 0.15, 0.20, facecolor=color, edgecolor=INK, linewidth=2.0, zorder=2))
+    ax.text(0.09, 0.66, label.upper(), fontsize=8.5, color=MUTED, fontweight="black", zorder=3)
+    ax.text(0.09, 0.37, value, fontsize=22, color=color, fontweight="black", zorder=3)
     if detail:
-        ax.text(0.09, 0.18, detail, fontsize=8.5, color=MUTED)
+        ax.text(0.09, 0.18, detail, fontsize=8.5, color=MUTED, zorder=3)
+
+
+def _prepare_table_panel(fig: plt.Figure, ax: plt.Axes) -> None:
+    _panel_shadow(fig, ax)
+    ax.axis("off")
 
 
 def _render_table_image(
@@ -97,6 +182,8 @@ def _render_table_image(
     fig.subplots_adjust(left=0.04, right=0.98, top=0.80, bottom=0.05)
     _add_title(fig, title, subtitle)
     ax.axis("off")
+    ax.add_patch(Rectangle((0.012, -0.012), 1, 1, transform=ax.transAxes, facecolor=SHADOW, edgecolor="none", zorder=-3, clip_on=False))
+    ax.add_patch(Rectangle((0, 0), 1, 1, transform=ax.transAxes, facecolor=PANEL, edgecolor=INK, linewidth=2.8, zorder=-2, clip_on=False))
     table = ax.table(
         cellText=wrapped_rows,
         colLabels=columns,
@@ -109,15 +196,15 @@ def _render_table_image(
     table.set_fontsize(9)
 
     for (row_idx, _col_idx), cell in table.get_celld().items():
-        cell.set_edgecolor(GRID)
-        cell.set_linewidth(0.7)
+        cell.set_edgecolor(INK)
+        cell.set_linewidth(1.35)
         cell.get_text().set_va("center")
         if row_idx == 0:
-            cell.set_facecolor(BLUE)
+            cell.set_facecolor(INK)
             cell.get_text().set_color("#FFFFFF")
-            cell.get_text().set_fontweight("bold")
+            cell.get_text().set_fontweight("black")
         else:
-            cell.set_facecolor(PANEL if row_idx % 2 else "#F2ECE2")
+            cell.set_facecolor(PANEL if row_idx % 2 else PANEL_ALT)
             cell.get_text().set_color(INK)
 
     return _save(fig, filename)
@@ -236,26 +323,26 @@ def build_market_dashboard(gold: pd.DataFrame, country: pd.DataFrame) -> Path:
     ax_bar = fig.add_subplot(gs[1:, :2])
     top = country.head(10).sort_values("lead_count")
     colors = [TEAL if tier == "Tier 1" else "#4267D5" for tier in top["priority_tier"]]
-    ax_bar.barh(top["company_country"], top["lead_count"], color=colors)
+    ax_bar.barh(top["company_country"], top["lead_count"], color=colors, edgecolor=INK, linewidth=1.6)
     ax_bar.set_title("Top mercados por leads elegíveis", loc="left", color=INK, fontweight="bold")
     ax_bar.set_xlabel("Leads")
-    _style_axis(ax_bar)
+    _style_axis(ax_bar, fig)
 
     ax_table = fig.add_subplot(gs[1:, 2:])
-    ax_table.axis("off")
+    _prepare_table_panel(fig, ax_table)
     table_data = country.head(8)[["company_country", "lead_count", "company_count", "priority_tier"]]
     table = ax_table.table(
         cellText=table_data.values,
         colLabels=["País", "Leads", "Empresas", "Tier"],
-        loc="center",
         cellLoc="left",
+        bbox=[0, 0, 1, 1],
     )
     table.auto_set_font_size(False)
     table.set_fontsize(9)
-    table.scale(1, 1.7)
     for (row, _col), cell in table.get_celld().items():
-        cell.set_edgecolor(GRID)
-        cell.set_facecolor(BLUE if row == 0 else (PANEL if row % 2 else "#F2ECE2"))
+        cell.set_edgecolor(INK)
+        cell.set_linewidth(1.25)
+        cell.set_facecolor(INK if row == 0 else (PANEL if row % 2 else PANEL_ALT))
         cell.get_text().set_color("#FFFFFF" if row == 0 else INK)
         if row == 0:
             cell.get_text().set_fontweight("bold")
@@ -286,17 +373,17 @@ def build_buyer_dashboard(gold: pd.DataFrame, role: pd.DataFrame, size: pd.DataF
 
     ax_role = fig.add_subplot(gs[1:, :2])
     role_plot = role.sort_values("lead_count")
-    ax_role.barh(role_plot["role_category"], role_plot["lead_count"], color=TEAL)
+    ax_role.barh(role_plot["role_category"], role_plot["lead_count"], color=TEAL, edgecolor=INK, linewidth=1.6)
     ax_role.set_title("Leads por persona", loc="left", color=INK, fontweight="bold")
     ax_role.set_xlabel("Leads")
-    _style_axis(ax_role)
+    _style_axis(ax_role, fig)
 
     ax_size = fig.add_subplot(gs[1, 2:])
-    ax_size.bar(size["company_size_segment"], size["lead_count"], color=[ORANGE, TEAL, BLUE, PURPLE])
+    ax_size.bar(size["company_size_segment"], size["lead_count"], color=[ORANGE, TEAL, BLUE, PURPLE], edgecolor=INK, linewidth=1.6)
     ax_size.set_title("Leads por porte", loc="left", color=INK, fontweight="bold")
     ax_size.set_ylabel("Leads")
     ax_size.tick_params(axis="x", labelrotation=15)
-    _style_axis(ax_size)
+    _style_axis(ax_size, fig, grid_axis="y")
 
     ax_heat = fig.add_subplot(gs[2, 2:])
     matrix = pd.crosstab(gold["role_category"], gold["company_size_segment"])
@@ -310,7 +397,33 @@ def build_buyer_dashboard(gold: pd.DataFrame, role: pd.DataFrame, size: pd.DataF
     ]
     size_order = ["1. Startup / SMB", "2. Mid-Market", "3. Enterprise", "4. Unknown"]
     matrix = matrix.reindex(index=role_order, columns=size_order, fill_value=0)
-    sns.heatmap(matrix, annot=True, fmt="d", cmap="YlGnBu", cbar=False, linewidths=0.4, ax=ax_heat)
+    matrix = matrix.rename(
+        index={
+            "Executive / Technical Decision Maker": "Exec / Tech",
+            "Data / Compliance": "Data / Compliance",
+            "Security / Risk": "Security / Risk",
+            "IT / Engineering Management": "IT Mgmt",
+            "Individual Contributor / Specialist": "IC / Specialist",
+            "Other": "Other",
+        },
+        columns={
+            "1. Startup / SMB": "Startup / SMB",
+            "2. Mid-Market": "Mid-Market",
+            "3. Enterprise": "Enterprise",
+            "4. Unknown": "Unknown",
+        },
+    )
+    _panel_shadow(fig, ax_heat)
+    sns.heatmap(
+        matrix,
+        annot=True,
+        fmt="d",
+        cmap=sns.color_palette([PANEL_ALT, "#DFF5EE", TEAL, BLUE], as_cmap=True),
+        cbar=False,
+        linewidths=1.2,
+        linecolor=INK,
+        ax=ax_heat,
+    )
     ax_heat.set_title("Mix persona x porte", loc="left", color=INK, fontweight="bold")
     ax_heat.set_xlabel("")
     ax_heat.set_ylabel("")
@@ -354,21 +467,23 @@ def build_border_dashboard(gold: pd.DataFrame) -> Path:
     )
 
     ax_bar = fig.add_subplot(gs[1:, :2])
-    ax_bar.barh(mismatch["company_country"], mismatch["mismatch_rate"], color=ORANGE)
+    ax_bar.barh(mismatch["company_country"], mismatch["mismatch_rate"], color=ORANGE, edgecolor=INK, linewidth=1.6)
     ax_bar.set_title("Taxa cross-border por país", loc="left", color=INK, fontweight="bold")
     ax_bar.set_xlabel("Share")
     ax_bar.xaxis.set_major_formatter(lambda x, _: f"{x:.0%}")
-    _style_axis(ax_bar)
+    _style_axis(ax_bar, fig)
 
     ax_scatter = fig.add_subplot(gs[1:, 2:])
-    ax_scatter.scatter(mismatch["lead_count"], mismatch["mismatch_rate"], s=130, color=RED)
+    ax_scatter.scatter(mismatch["lead_count"], mismatch["mismatch_rate"], s=145, color=RED, edgecolor=INK, linewidth=1.4)
     for row in mismatch.itertuples(index=False):
         ax_scatter.text(row.lead_count + 1, row.mismatch_rate + 0.003, row.company_country, fontsize=8, color=INK)
-    ax_scatter.set_title("Volume x sinal distribuido", loc="left", color=INK, fontweight="bold")
+    ax_scatter.set_title("Volume x sinal distribuído", loc="left", color=INK, fontweight="bold")
     ax_scatter.set_xlabel("Leads elegíveis")
     ax_scatter.set_ylabel("Taxa cross-border")
+    ax_scatter.set_xlim(0, mismatch["lead_count"].max() + 32)
+    ax_scatter.set_ylim(max(0, mismatch["mismatch_rate"].min() - 0.01), mismatch["mismatch_rate"].max() + 0.015)
     ax_scatter.yaxis.set_major_formatter(lambda x, _: f"{x:.0%}")
-    _style_axis(ax_scatter)
+    _style_axis(ax_scatter, fig)
 
     return _save(fig, "06_powerbi_border_signal.png")
 
@@ -390,40 +505,40 @@ def build_action_dashboard(country: pd.DataFrame) -> Path:
 
     tier = country.groupby("priority_tier", as_index=False)["lead_count"].sum()
     ax_tier = fig.add_subplot(gs[0, :2])
-    ax_tier.bar(tier["priority_tier"], tier["lead_count"], color=[TEAL, BLUE, PURPLE])
+    ax_tier.bar(tier["priority_tier"], tier["lead_count"], color=[TEAL, BLUE, PURPLE], edgecolor=INK, linewidth=1.6)
     ax_tier.set_title("Leads por tier", loc="left", color=INK, fontweight="bold")
     ax_tier.set_ylabel("Leads")
-    _style_axis(ax_tier)
+    _style_axis(ax_tier, fig, grid_axis="y")
 
     ax_rec = fig.add_subplot(gs[0, 2:])
-    ax_rec.axis("off")
+    _prepare_table_panel(fig, ax_rec)
     recommendations = [
         ("Privacy-first", "Germany, France, Belgium", "GDPR, soberania e menor dependência do Google"),
         ("Scale-first", "United Kingdom, Ireland, Lithuania, Estonia", "eficiência técnica e implementação rápida"),
         ("Balanced", "Spain, Portugal, Poland", "performance anti-bot com prontidão regulatória"),
     ]
-    y = 0.88
+    y = 0.84
     for label, markets, message in recommendations:
-        ax_rec.text(0.02, y, label, fontsize=12, fontweight="bold", color=TEAL)
-        ax_rec.text(0.02, y - 0.13, markets, fontsize=10, color=INK)
-        ax_rec.text(0.02, y - 0.25, message, fontsize=9, color=MUTED)
-        y -= 0.34
+        ax_rec.text(0.02, y, label, fontsize=11, fontweight="bold", color=TEAL)
+        ax_rec.text(0.02, y - 0.11, markets, fontsize=9.4, color=INK)
+        ax_rec.text(0.02, y - 0.21, message, fontsize=8.4, color=MUTED)
+        y -= 0.30
 
     ax_table = fig.add_subplot(gs[1, :])
-    ax_table.axis("off")
+    _prepare_table_panel(fig, ax_table)
     table_data = country.head(10)[["country_rank", "company_country", "priority_tier", "lead_count", "company_count"]]
     table = ax_table.table(
         cellText=table_data.values,
         colLabels=["Rank", "País", "Tier", "Leads", "Empresas"],
-        loc="center",
         cellLoc="left",
+        bbox=[0, 0, 1, 1],
     )
     table.auto_set_font_size(False)
     table.set_fontsize(9)
-    table.scale(1, 1.65)
     for (row, _col), cell in table.get_celld().items():
-        cell.set_edgecolor(GRID)
-        cell.set_facecolor(BLUE if row == 0 else (PANEL if row % 2 else "#F2ECE2"))
+        cell.set_edgecolor(INK)
+        cell.set_linewidth(1.25)
+        cell.set_facecolor(INK if row == 0 else (PANEL if row % 2 else PANEL_ALT))
         cell.get_text().set_color("#FFFFFF" if row == 0 else INK)
         if row == 0:
             cell.get_text().set_fontweight("bold")

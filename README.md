@@ -93,7 +93,7 @@ erDiagram
 
 ## Dashboard e Visualizações
 
-O GitHub não executa relatórios Power BI interativos dentro do README. Como este projeto usa Power BI Desktop gratuito, a entrega visual no GitHub é feita com prévias estáticas geradas a partir dos mesmos CSVs processados que alimentam o PBIP. O relatório interativo completo está versionado em [`powerbi/hcaptcha-positioning/hcaptcha_report.pbip`](powerbi/hcaptcha-positioning/hcaptcha_report.pbip).
+O GitHub não executa relatórios Power BI interativos dentro do README. Como este projeto usa Power BI Desktop gratuito, a entrega visual no GitHub é feita com prévias estáticas geradas a partir dos mesmos CSVs processados que alimentam o PBIP. As imagens seguem a identidade pixel art da apresentação pública para manter consistência visual entre README, dashboard e defesa. O relatório interativo completo está versionado em [`powerbi/hcaptcha-positioning/hcaptcha_report.pbip`](powerbi/hcaptcha-positioning/hcaptcha_report.pbip).
 
 ### Prévia das Páginas do Power BI
 

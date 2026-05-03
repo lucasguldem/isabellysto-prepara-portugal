@@ -11,7 +11,7 @@ Este projeto foi estruturado em formato `PBIP` para desenvolvimento versionável
 
 ## Pré-visualização do relatório Power BI
 
-As imagens abaixo deixam as páginas do relatório visíveis diretamente no GitHub. Elas são geradas em `reports/figures/` a partir dos mesmos CSVs processados usados pelo projeto `PBIP`; a exploração interativa continua no Power BI Desktop gratuito.
+As imagens abaixo deixam as páginas do relatório visíveis diretamente no GitHub. Elas são geradas em `reports/figures/` a partir dos mesmos CSVs processados usados pelo projeto `PBIP` e seguem a identidade pixel art da apresentação pública; a exploração interativa continua no Power BI Desktop gratuito.
 
 ### Market Command
 
