@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "next-title",
+  "position": {
+    "x": 42,
+    "y": 18,
+    "z": 1000,
+    "height": 72,
+    "width": 980,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "ACTION MAP // From insight to commercial motion",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "11pt",
+                      "color": "#0B6B5F",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Sequência recomendada para ativar o mercado europeu",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "25pt",
+                      "color": "#17212B",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

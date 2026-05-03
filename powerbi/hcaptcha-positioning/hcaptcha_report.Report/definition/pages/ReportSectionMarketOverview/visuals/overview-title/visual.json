@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "overview-title",
+  "position": {
+    "x": 42,
+    "y": 18,
+    "z": 1000,
+    "height": 72,
+    "width": 1040,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "PRIVACY INTELLIGENCE // Europe GTM command center",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "11pt",
+                      "color": "#0B6B5F",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Onde privacidade vira vantagem comercial",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "25pt",
+                      "color": "#17212B",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

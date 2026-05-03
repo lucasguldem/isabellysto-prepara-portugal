@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "next-body",
+  "position": {
+    "x": 630,
+    "y": 410,
+    "z": 900,
+    "height": 255,
+    "width": 600,
+    "tabOrder": 900
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Commercial motion",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "11pt",
+                      "color": "#0B6B5F",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1. ABM privacy-first em Germany e France para enterprise.",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "14pt",
+                      "color": "#17212B",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. United Kingdom com narrativa performance + UX.",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "14pt",
+                      "color": "#17212B",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. Spain e Portugal como expansão híbrida: compliance + escala.",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "14pt",
+                      "color": "#17212B",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "4. Tier 2 digital-first para Ireland, Lithuania e Estonia.",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "14pt",
+                      "color": "#17212B",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A tabela fica curta de propósito: a recomendação vira discurso, não scroll horizontal.",
+                    "textStyle": {
+                      "fontFamily": "Aptos",
+                      "fontSize": "11pt",
+                      "color": "#5D6B72"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

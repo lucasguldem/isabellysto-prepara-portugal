@@ -22,7 +22,7 @@
 - Create: `data/processed/.gitkeep`
 - Create: `reports/quality/.gitkeep`
 - Create: `reports/ops/.gitkeep`
-- Modify: `dashboards/hcaptcha_report/README.md`
+- Modify: `powerbi/hcaptcha-positioning/README.md`
 
 - [ ] **Step 1: Write the failing repository-structure test**
 

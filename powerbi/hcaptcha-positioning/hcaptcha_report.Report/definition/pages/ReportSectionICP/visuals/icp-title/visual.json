@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "icp-title",
+  "position": {
+    "x": 42,
+    "y": 18,
+    "z": 1000,
+    "height": 72,
+    "width": 920,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "BUYER INTELLIGENCE // Persona and company-size lens",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "11pt",
+                      "color": "#D88A28",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Quem compra, quem influencia e como adaptar a mensagem",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "25pt",
+                      "color": "#17212B",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

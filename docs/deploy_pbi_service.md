@@ -44,7 +44,7 @@ This checks:
 
 ### 3. Open and publish the report
 
-1. Open `dashboards/hcaptcha_report/hcaptcha_report.pbip` in Power BI Desktop.
+1. Open `powerbi/hcaptcha-positioning/hcaptcha_report.pbip` in Power BI Desktop.
 2. Confirm that the Power Query source uses the stable Windows mirror path.
 3. Refresh the model in Desktop.
 4. Publish the report to the target workspace.

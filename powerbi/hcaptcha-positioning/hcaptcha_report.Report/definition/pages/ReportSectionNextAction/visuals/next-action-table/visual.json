@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "next-action-table",
+  "position": {
+    "x": 42,
+    "y": 165,
+    "z": 880,
+    "height": 500,
+    "width": 540,
+    "tabOrder": 880
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Country Priority"
+                    }
+                  },
+                  "Property": "Rank"
+                }
+              },
+              "queryRef": "Country Priority.Rank"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Country Priority"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "Country Priority.Country"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Country Priority"
+                    }
+                  },
+                  "Property": "Tier"
+                }
+              },
+              "queryRef": "Country Priority.Tier"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Country Priority"
+                    }
+                  },
+                  "Property": "Leads"
+                }
+              },
+              "queryRef": "Country Priority.Leads"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Country Priority"
+                    }
+                  },
+                  "Property": "Companies"
+                }
+              },
+              "queryRef": "Country Priority.Companies"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "title": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Prioritized go-to-market ledger'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Aptos Display'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": "#183A59"
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

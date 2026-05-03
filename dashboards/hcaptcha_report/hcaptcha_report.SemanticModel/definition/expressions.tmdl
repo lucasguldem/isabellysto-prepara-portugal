@@ -1,4 +1,0 @@
-expression DataRoot = "\\wsl.localhost\Ubuntu-24.04\home\lucasguldem\dev\data-science\isabellysto-data-analytics\data\processed" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-	lineageTag: 48cb2b8d-8ec9-42bf-93c1-b6d0f1787d11
-
-	annotation PBI_ResultType = Text

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "cross-border-narrative",
+  "position": {
+    "x": 795,
+    "y": 445,
+    "z": 780,
+    "height": 205,
+    "width": 425,
+    "tabOrder": 780
+  },
+  "visual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Interpretation",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "11pt",
+                      "color": "#7A5CFF",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "High mismatch share is not noise: it points to distributed teams, border-sensitive data flows and stronger need for consistent bot-defense policy.",
+                    "textStyle": {
+                      "fontFamily": "Aptos Display",
+                      "fontSize": "14pt",
+                      "color": "#17212B",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Use the mismatch slicer to isolate pure cross-border accounts during the presentation.",
+                    "textStyle": {
+                      "fontFamily": "Aptos",
+                      "fontSize": "11pt",
+                      "color": "#5D6B72"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

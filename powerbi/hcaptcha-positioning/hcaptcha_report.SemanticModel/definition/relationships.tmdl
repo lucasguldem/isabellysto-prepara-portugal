@@ -1,0 +1,11 @@
+relationship 7a2152fc-e347-48e8-84bb-9ce92ecf79b7
+	fromColumn: Leads.Country
+	toColumn: 'Country Priority'.Country
+
+relationship 8896ce94-fdb4-4647-8e7f-36ec1ea275f1
+	fromColumn: Leads.Role
+	toColumn: 'Role Category'.Role
+
+relationship 62f74127-79ad-4df4-9c84-9041637dd349
+	fromColumn: Leads.Segment
+	toColumn: 'Company Size'.Segment

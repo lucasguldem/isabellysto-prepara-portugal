@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Posicionamento europeu da hCaptcha</title>
+  <style>
+    @page { size: 13.333in 7.5in; margin: 0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #182126; color: #182126; font-family: "Cascadia Code", "JetBrains Mono", "Courier New", monospace; }
+    .slide { width: 13.333in; height: 7.5in; padding: .38in; page-break-after: always; background: linear-gradient(135deg, #fff7dc 0 34%, #dff5ee 34% 64%, #ffe0d5 64% 100%); border: 12px solid #182126; position: relative; overflow: hidden; }
+    .slide:before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(24,33,38,.08) 0 1px, transparent 1px 18px), repeating-linear-gradient(0deg, rgba(255,255,255,.22) 0 1px, transparent 1px 8px); pointer-events: none; }
+    header { display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1; }
+    header p { margin: 0; font-weight: 700; text-transform: uppercase; color: #2e68d6; }
+    header b { border: 4px solid #182126; padding: 8px 12px; background: #fffdf4; box-shadow: 5px 5px 0 #182126; }
+    main { display: grid; grid-template-columns: 1.05fr .95fr; gap: .34in; height: calc(100% - .55in); align-items: center; position: relative; z-index: 1; }
+    h1 { margin: 0 0 .18in; font-size: .52in; line-height: .94; text-transform: uppercase; }
+    p { font-size: .18in; line-height: 1.45; }
+    aside { border: 6px solid #182126; background: #fffdf4; box-shadow: 10px 10px 0 #182126; padding: .22in; min-height: 4.4in; display: grid; place-items: center; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .12in; margin-top: .28in; }
+    .stat { border: 5px solid #182126; background: #fffdf4; padding: .13in; min-height: .9in; box-shadow: 6px 6px 0 #182126; }
+    .stat span, .stat small { display: block; font-size: .1in; text-transform: uppercase; font-weight: 700; }
+    .stat strong { display: block; margin: .05in 0; font-size: .22in; }
+    .bars { width: 100%; display: grid; gap: .11in; }
+    .bar-row { display: grid; grid-template-columns: 1.55in 1fr .55in; gap: .12in; align-items: center; font-weight: 700; font-size: .13in; }
+    .bar-row div { height: .25in; border: 4px solid #182126; background: #fff; }
+    .bar-row i { display: block; height: 100%; background: #2e68d6; }
+    .pipeline { width: 100%; margin: 0; padding: 0; list-style: none; display: grid; gap: .18in; }
+    .pipeline li { border: 5px solid #182126; background: #24a99a; padding: .16in; font-weight: 700; box-shadow: 6px 6px 0 #182126; }
+    .flow { width: 100%; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: .14in; }
+    .flow li, .script-list li { border: 5px solid #182126; background: #fffdf4; padding: .13in; font-weight: 700; box-shadow: 5px 5px 0 #182126; }
+    .flow li:nth-child(2n), .script-list li:nth-child(2n) { background: #ffe0d5; }
+    .flow li:nth-child(3n), .script-list li:nth-child(3n) { background: #dff5ee; }
+    .script-list { width: 100%; margin: 0; padding: 0; list-style: none; display: grid; gap: .12in; font-size: .13in; }
+    .roadmap li { background: #f0b429; }
+    .pixel-tower { display: grid; grid-template-columns: repeat(2, 1.2in); gap: .2in; }
+    .pixel-tower i { display: block; width: 1.2in; height: 1.2in; border: 6px solid #182126; box-shadow: 8px 8px 0 #182126; }
+    .pixel-tower i:nth-child(1) { background: #2e68d6; } .pixel-tower i:nth-child(2) { background: #df5a44; } .pixel-tower i:nth-child(3) { background: #24a99a; } .pixel-tower i:nth-child(4) { background: #7252b8; }
+    .pixel-map, .versus { width: 100%; display: grid; gap: .18in; text-align: center; font-weight: 700; }
+    .pixel-map b { height: .18in; background: repeating-linear-gradient(90deg, #182126 0 20px, transparent 20px 34px); }
+    .pixel-map span, .versus b, .versus small { border: 5px solid #182126; background: #fffdf4; padding: .18in; box-shadow: 6px 6px 0 #182126; }
+    .versus span { font-size: .34in; color: #df5a44; }
+    .mint aside, .mint .bar-row i { background: #bcefe6; } .blue aside, .blue .bar-row i { background: #c8dcff; } .yellow aside, .yellow .bar-row i { background: #ffe7a3; } .violet aside, .violet .bar-row i { background: #e4ddff; } .red aside, .red .bar-row i { background: #ffd3c8; }
+  </style>
+</head>
+<body>
+    <section class="slide blue">
+      <header>
+        <p>Resposta ao desafio</p>
+        <b>01</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>A hCaptcha deve se posicionar como alternativa anti-bot centrada em privacidade</h1>
+          <p>A resposta ao desafio e que a hCaptcha deve entrar na Europa com privacidade, conformidade e eficiencia tecnica como mensagem central. O mercado europeu valoriza protecao contra bots, reducao de dependencia do reCAPTCHA e seguranca para conversas sobre GDPR.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Base gold</span>
+      <strong>882 leads</strong>
+      <small>dados processados</small>
+    </article>
+
+    <article class="stat">
+      <span>Empresas</span>
+      <strong>748</strong>
+      <small>contas sem PII exposta</small>
+    </article>
+
+    <article class="stat">
+      <span>Mercados</span>
+      <strong>13 paises</strong>
+      <small>recorte Europa</small>
+    </article>
+  </div>
+        </div>
+        <aside><div class="pixel-tower"><i></i><i></i><i></i><i></i></div></aside>
+      </main>
+    </section>
+
+    <section class="slide mint">
+      <header>
+        <p>Trilha de decisao</p>
+        <b>02</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>Do dado bruto a decisao comercial</h1>
+          <p>O projeto seguiu uma sequencia defensavel: pergunta de negocio, exploracao, base gold, modelo Power BI, validacao e recomendacao. Assim, a conclusao nao depende de opiniao solta; ela nasce de um processo reproduzivel.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Exploracao</span>
+      <strong>Jupyter</strong>
+      <small>entendimento inicial</small>
+    </article>
+
+    <article class="stat">
+      <span>Automacao</span>
+      <strong>Python</strong>
+      <small>pipeline e snapshot</small>
+    </article>
+
+    <article class="stat">
+      <span>Entrega</span>
+      <strong>PBIP + PDF</strong>
+      <small>dashboard e defesa</small>
+    </article>
+  </div>
+        </div>
+        <aside><ol class="flow"><li>Enunciado</li><li>Diagnostico</li><li>Base gold</li><li>Modelo BI</li><li>Validacao</li><li>Recomendacao</li></ol></aside>
+      </main>
+    </section>
+
+    <section class="slide yellow">
+      <header>
+        <p>Dados e qualidade</p>
+        <b>03</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>Raw virou gold antes da leitura de negocio</h1>
+          <p>A base original precisava ser tratada antes de sustentar uma recomendacao. O pipeline padronizou pais, cargo, porte e empresa, removeu duplicidades e gerou tabelas prontas para analise, dashboard e apresentacao.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Raw</span>
+      <strong>1,027</strong>
+      <small>linhas originais</small>
+    </article>
+
+    <article class="stat">
+      <span>Gold</span>
+      <strong>882</strong>
+      <small>leads europeus elegiveis</small>
+    </article>
+
+    <article class="stat">
+      <span>Quality gate</span>
+      <strong>approved</strong>
+      <small>carga validada</small>
+    </article>
+  </div>
+        </div>
+        <aside><ol class="pipeline"><li>CSV original</li><li>ETL Python</li><li>Gold + dimensoes</li><li>Power BI</li></ol></aside>
+      </main>
+    </section>
+
+    <section class="slide blue">
+      <header>
+        <p>Mercados prioritarios</p>
+        <b>04</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>Germany lidera a oportunidade inicial</h1>
+          <p>A entrada deve comecar pelos mercados com maior massa critica. Eles permitem concentrar outbound e ABM onde ja existe volume suficiente para testar mensagem, aprender rapido e criar prova comercial.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Top pais</span>
+      <strong>Germany</strong>
+      <small>277 leads</small>
+    </article>
+
+    <article class="stat">
+      <span>Top 5</span>
+      <strong>88.4%</strong>
+      <small>dos leads elegiveis</small>
+    </article>
+
+    <article class="stat">
+      <span>Tese</span>
+      <strong>foco</strong>
+      <small>menos dispersao</small>
+    </article>
+  </div>
+        </div>
+        <aside><div class="bars">
+        <div class="bar-row">
+          <span>Germany</span>
+          <div><i style="width:100%"></i></div>
+          <strong>277</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>United Kingdom</span>
+          <div><i style="width:63%"></i></div>
+          <strong>174</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>France</span>
+          <div><i style="width:60%"></i></div>
+          <strong>166</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>Spain</span>
+          <div><i style="width:36%"></i></div>
+          <strong>101</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>Portugal</span>
+          <div><i style="width:22%"></i></div>
+          <strong>62</strong>
+        </div>
+      </div></aside>
+      </main>
+    </section>
+
+    <section class="slide violet">
+      <header>
+        <p>Perfis de compradores</p>
+        <b>05</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>A decisao combina tecnologia e compliance</h1>
+          <p>Os cargos mostram que a venda precisa falar com tecnologia e compliance ao mesmo tempo. Para decisores tecnicos, o argumento e performance e facilidade de implementacao; para dados, seguranca e risco, o argumento e privacidade e conformidade.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Persona lider</span>
+      <strong>Executive / Technical Decision Maker</strong>
+      <small>41.3%</small>
+    </article>
+
+    <article class="stat">
+      <span>Compliance</span>
+      <strong>36.7%</strong>
+      <small>sinal regulatorio</small>
+    </article>
+
+    <article class="stat">
+      <span>Abordagem</span>
+      <strong>dupla</strong>
+      <small>tecnica + privacidade</small>
+    </article>
+  </div>
+        </div>
+        <aside><div class="bars">
+        <div class="bar-row">
+          <span>Executive / Technical Decision Maker</span>
+          <div><i style="width:100%"></i></div>
+          <strong>364</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>Data / Compliance</span>
+          <div><i style="width:89%"></i></div>
+          <strong>324</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>Other</span>
+          <div><i style="width:36%"></i></div>
+          <strong>131</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>Individual Contributor / Specialist</span>
+          <div><i style="width:8%"></i></div>
+          <strong>29</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>IT / Engineering Management</span>
+          <div><i style="width:7%"></i></div>
+          <strong>25</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>Security / Risk</span>
+          <div><i style="width:4%"></i></div>
+          <strong>9</strong>
+        </div>
+      </div></aside>
+      </main>
+    </section>
+
+    <section class="slide red">
+      <header>
+        <p>Porte das empresas</p>
+        <b>06</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>1. Startup / SMB puxa a tese enterprise</h1>
+          <p>Empresas maiores tendem a ter mais trafego, maior exposicao a bots e mais maturidade para discutir troca de solucao. Mid-market e SMB entram como expansao depois que a proposta for validada nos segmentos de maior impacto.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Enterprise</span>
+      <strong>42.7%</strong>
+      <small>maior segmento</small>
+    </article>
+
+    <article class="stat">
+      <span>Mid + SMB</span>
+      <strong>56.7%</strong>
+      <small>expansao comercial</small>
+    </article>
+
+    <article class="stat">
+      <span>Prioridade</span>
+      <strong>contas maiores</strong>
+      <small>alto impacto</small>
+    </article>
+  </div>
+        </div>
+        <aside><div class="bars">
+        <div class="bar-row">
+          <span>1. Startup / SMB</span>
+          <div><i style="width:68%"></i></div>
+          <strong>257</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>2. Mid-Market</span>
+          <div><i style="width:64%"></i></div>
+          <strong>243</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>3. Enterprise</span>
+          <div><i style="width:100%"></i></div>
+          <strong>377</strong>
+        </div>
+
+        <div class="bar-row">
+          <span>4. Unknown</span>
+          <div><i style="width:4%"></i></div>
+          <strong>5</strong>
+        </div>
+      </div></aside>
+      </main>
+    </section>
+
+    <section class="slide mint">
+      <header>
+        <p>Comportamento por proxy</p>
+        <b>07</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>O sinal cross-border indica operacao distribuida</h1>
+          <p>A planilha nao traz cliques, visitas ou intencao declarada. Por isso, comportamento e interesse foram lidos por proxies firmograficos: cargo, pais, porte e divergencia entre pais do contato e pais da empresa.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Cross-border</span>
+      <strong>10.1%</strong>
+      <small>base limpa</small>
+    </article>
+
+    <article class="stat">
+      <span>Top 5 media</span>
+      <strong>10.2%</strong>
+      <small>mercados lideres</small>
+    </article>
+
+    <article class="stat">
+      <span>Uso</span>
+      <strong>proxy</strong>
+      <small>sem evento comportamental</small>
+    </article>
+  </div>
+        </div>
+        <aside><div class="pixel-map"><span>Contato</span><b></b><span>Empresa</span></div></aside>
+      </main>
+    </section>
+
+    <section class="slide blue">
+      <header>
+        <p>Barreiras e oportunidades</p>
+        <b>08</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>Privacidade vira diferenciacao competitiva</h1>
+          <p>Na Europa, privacidade, GDPR e dependencia do ecossistema Google podem virar barreiras para concorrentes e oportunidade para a hCaptcha. A diferenciacao precisa ser concreta: menos exposicao de dados, protecao anti-bot e adocao tecnica simples.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Privacy-first</span>
+      <strong>Germany, France, Belgium, Switzerland</strong>
+      <small>mensagem GDPR</small>
+    </article>
+
+    <article class="stat">
+      <span>Scale-first</span>
+      <strong>United Kingdom, Ireland, Lithuania, Estonia</strong>
+      <small>eficiencia tecnica</small>
+    </article>
+
+    <article class="stat">
+      <span>Concorrencia</span>
+      <strong>reCAPTCHA</strong>
+      <small>alternativa mais privada</small>
+    </article>
+  </div>
+        </div>
+        <aside><div class="versus"><b>hCaptcha</b><span>vs</span><b>reCAPTCHA</b><small>privacidade · soberania · UX</small></div></aside>
+      </main>
+    </section>
+
+    <section class="slide violet">
+      <header>
+        <p>Dashboard interativo</p>
+        <b>09</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>O Power BI transforma a analise em decisao filtravel</h1>
+          <p>A entrega principal do desafio e o dashboard interativo em Power BI. Ele organiza mercado, persona, porte, sinal cross-border e proxima acao em paginas filtraveis, apoiadas por relatorio executivo, PDF publico e roteiro privado.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Power BI</span>
+      <strong>4 paginas</strong>
+      <small>visuais nativos</small>
+    </article>
+
+    <article class="stat">
+      <span>Relatorio</span>
+      <strong>executivo</strong>
+      <small>analise e recomendacao</small>
+    </article>
+
+    <article class="stat">
+      <span>Defesa</span>
+      <strong>2 PDFs</strong>
+      <small>publico + apresentador</small>
+    </article>
+  </div>
+        </div>
+        <aside><ul class="script-list"><li>Market Command</li><li>Buyer Intelligence</li><li>Border Signal</li><li>Action Map</li><li>Relatorio + apresentacao</li></ul></aside>
+      </main>
+    </section>
+
+    <section class="slide yellow">
+      <header>
+        <p>Plano comercial</p>
+        <b>10</b>
+      </header>
+      <main>
+        <div class="story">
+          <h1>Entrar com privacidade, provar valor e depois escalar</h1>
+          <p>A recomendacao final e iniciar por mercados prioritarios, adaptar a mensagem por pais e persona, validar o ICP em segmentos de maior impacto e depois ampliar para regioes adjacentes. A hCaptcha deve vender privacidade como entrada e eficiencia tecnica como escala.</p>
+          <div class="stats">
+    <article class="stat">
+      <span>Fase 1</span>
+      <strong>DE + FR</strong>
+      <small>privacy-first</small>
+    </article>
+
+    <article class="stat">
+      <span>Fase 2</span>
+      <strong>UK + IE</strong>
+      <small>scale-first</small>
+    </article>
+
+    <article class="stat">
+      <span>Tese</span>
+      <strong>ABM</strong>
+      <small>contas priorizadas</small>
+    </article>
+  </div>
+        </div>
+        <aside><ol class="pipeline roadmap"><li>Priorizar contas</li><li>Adaptar mensagem</li><li>Validar ICP</li><li>Escalar outbound</li></ol></aside>
+      </main>
+    </section>
+  </body>
+</html>

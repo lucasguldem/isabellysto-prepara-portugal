@@ -1,0 +1,6554 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-03T10:16:58Z",
+    "privacy_level": "Level 1: Aggregates + Anonymous Companies",
+    "source_rows": 882,
+    "unique_companies": 748,
+    "source_files": {
+      "gold": "/home/lucasguldem/dev/data-science/isabellysto-data-analytics/data/processed/hcaptcha_europe_gold.csv",
+      "country_priority": "/home/lucasguldem/dev/data-science/isabellysto-data-analytics/data/processed/dim_country_priority.csv",
+      "role_category": "/home/lucasguldem/dev/data-science/isabellysto-data-analytics/data/processed/dim_role_category.csv",
+      "company_size": "/home/lucasguldem/dev/data-science/isabellysto-data-analytics/data/processed/dim_company_size.csv",
+      "summary": "/home/lucasguldem/dev/data-science/isabellysto-data-analytics/reports/hcaptcha_positioning_summary.md"
+    },
+    "quality_decision": "approved"
+  },
+  "market": [
+    {
+      "company_country": "Germany",
+      "lead_count": 277,
+      "company_count": 254,
+      "executive_share": 0.689531,
+      "compliance_share": 0.184116,
+      "mismatch_share": 0.054152,
+      "country_rank": 1,
+      "priority_tier": "Tier 1",
+      "messaging_angle": "Privacy-first and GDPR-safe alternative to reCAPTCHA",
+      "strategic_recommendation": "Target Germany with privacy-first and gdpr-safe alternative to recaptcha."
+    },
+    {
+      "company_country": "United Kingdom",
+      "lead_count": 174,
+      "company_count": 138,
+      "executive_share": 0.344828,
+      "compliance_share": 0.586207,
+      "mismatch_share": 0.183908,
+      "country_rank": 2,
+      "priority_tier": "Tier 1",
+      "messaging_angle": "Developer efficiency and scalable anti-bot performance",
+      "strategic_recommendation": "Target United Kingdom with developer efficiency and scalable anti-bot performance."
+    },
+    {
+      "company_country": "France",
+      "lead_count": 166,
+      "company_count": 128,
+      "executive_share": 0.174699,
+      "compliance_share": 0.698795,
+      "mismatch_share": 0.078313,
+      "country_rank": 3,
+      "priority_tier": "Tier 1",
+      "messaging_angle": "Privacy-first and GDPR-safe alternative to reCAPTCHA",
+      "strategic_recommendation": "Target France with privacy-first and gdpr-safe alternative to recaptcha."
+    },
+    {
+      "company_country": "Spain",
+      "lead_count": 101,
+      "company_count": 82,
+      "executive_share": 0.306931,
+      "compliance_share": 0.09901,
+      "mismatch_share": 0.09901,
+      "country_rank": 4,
+      "priority_tier": "Tier 1",
+      "messaging_angle": "Balanced anti-bot performance with compliance-ready messaging",
+      "strategic_recommendation": "Target Spain with balanced anti-bot performance with compliance-ready messaging."
+    },
+    {
+      "company_country": "Portugal",
+      "lead_count": 62,
+      "company_count": 58,
+      "executive_share": 0.16129,
+      "compliance_share": 0.0,
+      "mismatch_share": 0.096774,
+      "country_rank": 5,
+      "priority_tier": "Tier 1",
+      "messaging_angle": "Balanced anti-bot performance with compliance-ready messaging",
+      "strategic_recommendation": "Target Portugal with balanced anti-bot performance with compliance-ready messaging."
+    },
+    {
+      "company_country": "Poland",
+      "lead_count": 41,
+      "company_count": 32,
+      "executive_share": 0.414634,
+      "compliance_share": 0.463415,
+      "mismatch_share": 0.02439,
+      "country_rank": 6,
+      "priority_tier": "Tier 2",
+      "messaging_angle": "Balanced anti-bot performance with compliance-ready messaging",
+      "strategic_recommendation": "Target Poland with balanced anti-bot performance with compliance-ready messaging."
+    },
+    {
+      "company_country": "Belgium",
+      "lead_count": 21,
+      "company_count": 20,
+      "executive_share": 0.333333,
+      "compliance_share": 0.52381,
+      "mismatch_share": 0.190476,
+      "country_rank": 7,
+      "priority_tier": "Tier 2",
+      "messaging_angle": "Privacy-first and GDPR-safe alternative to reCAPTCHA",
+      "strategic_recommendation": "Target Belgium with privacy-first and gdpr-safe alternative to recaptcha."
+    },
+    {
+      "company_country": "Ireland",
+      "lead_count": 16,
+      "company_count": 16,
+      "executive_share": 0.5,
+      "compliance_share": 0.4375,
+      "mismatch_share": 0.1875,
+      "country_rank": 8,
+      "priority_tier": "Tier 2",
+      "messaging_angle": "Developer efficiency and scalable anti-bot performance",
+      "strategic_recommendation": "Target Ireland with developer efficiency and scalable anti-bot performance."
+    },
+    {
+      "company_country": "Lithuania",
+      "lead_count": 15,
+      "company_count": 13,
+      "executive_share": 0.466667,
+      "compliance_share": 0.4,
+      "mismatch_share": 0.133333,
+      "country_rank": 9,
+      "priority_tier": "Tier 2",
+      "messaging_angle": "Developer efficiency and scalable anti-bot performance",
+      "strategic_recommendation": "Target Lithuania with developer efficiency and scalable anti-bot performance."
+    },
+    {
+      "company_country": "Estonia",
+      "lead_count": 6,
+      "company_count": 5,
+      "executive_share": 0.666667,
+      "compliance_share": 0.333333,
+      "mismatch_share": 0.166667,
+      "country_rank": 10,
+      "priority_tier": "Tier 2",
+      "messaging_angle": "Developer efficiency and scalable anti-bot performance",
+      "strategic_recommendation": "Target Estonia with developer efficiency and scalable anti-bot performance."
+    },
+    {
+      "company_country": "Italy",
+      "lead_count": 1,
+      "company_count": 1,
+      "executive_share": 0.0,
+      "compliance_share": 0.0,
+      "mismatch_share": 1.0,
+      "country_rank": 11,
+      "priority_tier": "Tier 3",
+      "messaging_angle": "Balanced anti-bot performance with compliance-ready messaging",
+      "strategic_recommendation": "Target Italy with balanced anti-bot performance with compliance-ready messaging."
+    },
+    {
+      "company_country": "Netherlands",
+      "lead_count": 1,
+      "company_count": 1,
+      "executive_share": 0.0,
+      "compliance_share": 0.0,
+      "mismatch_share": 1.0,
+      "country_rank": 12,
+      "priority_tier": "Tier 3",
+      "messaging_angle": "Balanced anti-bot performance with compliance-ready messaging",
+      "strategic_recommendation": "Target Netherlands with balanced anti-bot performance with compliance-ready messaging."
+    },
+    {
+      "company_country": "Switzerland",
+      "lead_count": 1,
+      "company_count": 1,
+      "executive_share": 0.0,
+      "compliance_share": 0.0,
+      "mismatch_share": 0.0,
+      "country_rank": 13,
+      "priority_tier": "Tier 3",
+      "messaging_angle": "Privacy-first and GDPR-safe alternative to reCAPTCHA",
+      "strategic_recommendation": "Target Switzerland with privacy-first and gdpr-safe alternative to recaptcha."
+    }
+  ],
+  "personas": [
+    {
+      "role_category": "Executive / Technical Decision Maker",
+      "lead_count": 364,
+      "company_count": 346,
+      "lead_share": 0.412698
+    },
+    {
+      "role_category": "Data / Compliance",
+      "lead_count": 324,
+      "company_count": 253,
+      "lead_share": 0.367347
+    },
+    {
+      "role_category": "Other",
+      "lead_count": 131,
+      "company_count": 118,
+      "lead_share": 0.148526
+    },
+    {
+      "role_category": "Individual Contributor / Specialist",
+      "lead_count": 29,
+      "company_count": 29,
+      "lead_share": 0.03288
+    },
+    {
+      "role_category": "IT / Engineering Management",
+      "lead_count": 25,
+      "company_count": 21,
+      "lead_share": 0.028345
+    },
+    {
+      "role_category": "Security / Risk",
+      "lead_count": 9,
+      "company_count": 8,
+      "lead_share": 0.010204
+    }
+  ],
+  "segments": [
+    {
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 257,
+      "company_count": 237,
+      "lead_share": 0.291383
+    },
+    {
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 243,
+      "company_count": 214,
+      "lead_share": 0.27551
+    },
+    {
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 377,
+      "company_count": 293,
+      "lead_share": 0.427438
+    },
+    {
+      "company_size_segment": "4. Unknown",
+      "lead_count": 5,
+      "company_count": 5,
+      "lead_share": 0.005669
+    }
+  ],
+  "companies": [
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 9,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1,
+        "IT / Engineering Management": 3,
+        "Other": 4,
+        "Security / Risk": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 8,
+      "role_mix": {
+        "Data / Compliance": 7,
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 7,
+      "role_mix": {
+        "Data / Compliance": 7
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 6,
+      "role_mix": {
+        "Data / Compliance": 6
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 5,
+      "role_mix": {
+        "Data / Compliance": 3,
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 5,
+      "role_mix": {
+        "Data / Compliance": 5
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 5,
+      "role_mix": {
+        "Data / Compliance": 5
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 5,
+      "role_mix": {
+        "Data / Compliance": 5
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 4,
+      "role_mix": {
+        "Data / Compliance": 4
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 4,
+      "role_mix": {
+        "Data / Compliance": 3,
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 4,
+      "role_mix": {
+        "Data / Compliance": 4
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 3,
+      "role_mix": {
+        "Data / Compliance": 3
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 3,
+      "role_mix": {
+        "Data / Compliance": 2,
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 3,
+      "role_mix": {
+        "Data / Compliance": 3
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 3,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "IT / Engineering Management": 2
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 3,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1,
+        "Other": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 3,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 3,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 3
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 3,
+      "role_mix": {
+        "Data / Compliance": 3
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 3,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 1,
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Estonia",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Other": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Security / Risk": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Other": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Other": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Security / Risk": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Other": 2
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Other": 2
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Other": 2
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "IT / Engineering Management": 2
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1,
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "IT / Engineering Management": 1,
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1,
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Other": 2
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Other": 2
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "IT / Engineering Management": 1,
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 1,
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 2
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 2,
+      "role_mix": {
+        "Data / Compliance": 2
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Belgium",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Estonia",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Estonia",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Estonia",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Estonia",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "France",
+      "company_size_segment": "4. Unknown",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Security / Risk": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Security / Risk": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Security / Risk": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Security / Risk": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "4. Unknown",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Germany",
+      "company_size_segment": "4. Unknown",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Ireland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Italy",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Lithuania",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Netherlands",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Security / Risk": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Poland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Portugal",
+      "company_size_segment": "4. Unknown",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "IT / Engineering Management": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "Spain",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "Switzerland",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "1. Startup / SMB",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Individual Contributor / Specialist": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "2. Mid-Market",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Data / Compliance": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Other": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "3. Enterprise",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    },
+    {
+      "company_country": "United Kingdom",
+      "company_size_segment": "4. Unknown",
+      "lead_count": 1,
+      "role_mix": {
+        "Executive / Technical Decision Maker": 1
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "track": "Privacy-first",
+      "countries": [
+        "Germany",
+        "France",
+        "Belgium",
+        "Switzerland"
+      ],
+      "message": "Lead with privacy, sovereignty, GDPR alignment and reCAPTCHA displacement."
+    },
+    {
+      "track": "Scale-first",
+      "countries": [
+        "United Kingdom",
+        "Ireland",
+        "Lithuania",
+        "Estonia"
+      ],
+      "message": "Lead with developer efficiency, low-friction anti-bot protection and fast implementation."
+    },
+    {
+      "track": "Balanced expansion",
+      "countries": [
+        "Spain",
+        "Portugal",
+        "Poland"
+      ],
+      "message": "Use compliance-ready anti-bot performance for expansion markets."
+    }
+  ],
+  "narrative": [
+    {
+      "level": "INFO",
+      "message": "O objetivo desta análise foi definir como a hCaptcha deve se posicionar no mercado europeu a partir de uma base de leads B2B do setor de tecnologia. A conclusão central é que a entrada na Europa deve seguir um modelo..."
+    },
+    {
+      "level": "INFO",
+      "message": "Este relatório utiliza uma base de dados raw (dados originais sem tratamento) de 1.027 registros, que passou por um processo rigoroso de tratamento (ETL), deduplicação e harmonização para gerar uma base gold (dados pr..."
+    },
+    {
+      "level": "INFO",
+      "message": "A análise revelou que os cinco maiores mercados concentram 88,4% dos leads elegíveis: Germany (277 leads), United Kingdom (174 leads), France (166 leads), Spain (101 leads) e Portugal (62 leads). Esta concentração per..."
+    },
+    {
+      "level": "INFO",
+      "message": "O relatório está organizado em seções que cobrem: sumário executivo, metodologia e integridade dos dados (detalhando o pipeline ETL, decisões de normalização e métricas de qualidade), análise do ecossistema europeu (c..."
+    },
+    {
+      "level": "INFO",
+      "message": "O processo de tratamento de dados seguiu uma sequência estruturada de etapas, cada uma com validações específicas que garantiram a qualidade final da base gold:"
+    },
+    {
+      "level": "INFO",
+      "message": "**Etapa 1 - Importação e Validação Inicial (Raw):** A fonte primária utilizada foi o arquivo data/raw/inbox/Planilha - Desafio de Dados - Página1.csv, uma cópia local do CSV original informado no enunciado do desafio...."
+    },
+    {
+      "level": "INFO",
+      "message": "**Etapa 2 - Higienização e Padronização:** Esta etapa envolveu múltiplas transformações críticas para a qualidade da análise:"
+    },
+    {
+      "level": "INFO",
+      "message": "**Etapa 3 - Deduplicação e Garantia de Unicidade:** A garantia de unicidade foi implementada utilizando a combinação E-mail + Nome da empresa como chave de deduplicação. Esta abordagem foi escolhida em preferência a d..."
+    },
+    {
+      "level": "INFO",
+      "message": "**Etapa 4 - Filtragem Geográfica:** A filtragem por empresa europeia foi aplicada utilizando o campo is_european_company, que foi populado com base na lista de países elegíveis: Germany, United Kingdom, France, Spain,..."
+    }
+  ],
+  "adoption_signals": [
+    {
+      "signal": "Concentracao geografica",
+      "value": "88.4%",
+      "detail": "dos leads europeus estao nos 5 maiores mercados; Germany lidera o recorte.",
+      "interpretation": "Permite outbound e ABM com foco, sem pulverizar a entrada europeia.",
+      "strength": "Alta"
+    },
+    {
+      "signal": "Compradores qualificados",
+      "value": "78.0%",
+      "detail": "dos leads estao em decisao tecnica, dados ou compliance.",
+      "interpretation": "A mensagem precisa unir seguranca, privacidade e facilidade de implementacao.",
+      "strength": "Alta"
+    },
+    {
+      "signal": "Maturidade enterprise",
+      "value": "42.7%",
+      "detail": "dos leads estao em empresas enterprise.",
+      "interpretation": "O primeiro caso de valor deve mirar contas com maior risco, volume e governanca.",
+      "strength": "Media"
+    },
+    {
+      "signal": "Operacao distribuida",
+      "value": "10.1%",
+      "detail": "89 leads tem pais do contato diferente do pais da empresa.",
+      "interpretation": "Este e um proxy de equipes internacionais, nao uma medicao direta de comportamento.",
+      "strength": "Media"
+    }
+  ],
+  "barriers": [
+    {
+      "theme": "Privacidade e GDPR",
+      "barrier": "Compradores europeus podem exigir prova de minimizacao de dados, base legal e transferencia internacional.",
+      "opportunity": "Posicionar a hCaptcha como alternativa privacy-first com menor dependencia do ecossistema Google.",
+      "move": "Abrir a conversa com compliance, DPA, minimizacao, cookies tecnicos e governanca de dados."
+    },
+    {
+      "theme": "Inercia do reCAPTCHA",
+      "barrier": "Muitas empresas ja usam reCAPTCHA e evitam troca quando percebem risco tecnico.",
+      "opportunity": "Explorar compatibilidade de integracao e migração simples como redutor de friccao.",
+      "move": "Usar mensagem de substituicao progressiva: piloto em formularios de maior risco antes de rollout amplo."
+    },
+    {
+      "theme": "Experiencia do usuario",
+      "barrier": "CAPTCHA pode ser visto como atrito para conversao e acessibilidade.",
+      "opportunity": "Vender protecao anti-bot com modos de baixa friccao e ajuste por risco.",
+      "move": "Separar discurso tecnico: bot score, modos invisiveis/passivos e reducao de falso positivo."
+    },
+    {
+      "theme": "Dados sem intencao direta",
+      "barrier": "A base nao informa uso atual de CAPTCHA, stack tecnologico ou eventos de interesse.",
+      "opportunity": "Transformar a analise em lista priorizada para validacao comercial rapida.",
+      "move": "Medir resposta por pais, persona e porte nos primeiros ciclos de outbound."
+    }
+  ],
+  "action_plan": [
+    {
+      "phase": "0-30 dias",
+      "focus": "Validar tese privacy-first",
+      "markets": "Germany, France, Belgium",
+      "buyer": "Compliance, DPO, CISO, Head of IT",
+      "message": "Alternativa anti-bot com privacidade, soberania e prontidao para GDPR.",
+      "kpi": "Taxa de resposta por persona e reunioes qualificadas."
+    },
+    {
+      "phase": "31-60 dias",
+      "focus": "Provar adocao tecnica",
+      "markets": "United Kingdom, Ireland, Lithuania",
+      "buyer": "Executive / Technical Decision Maker",
+      "message": "Troca simples do reCAPTCHA, baixa friccao de UX e protecao escalavel.",
+      "kpi": "Pilotos iniciados e barreiras tecnicas mapeadas."
+    },
+    {
+      "phase": "61-90 dias",
+      "focus": "Escalar para Enterprise",
+      "markets": "Spain, Portugal, Poland, Italy, Netherlands",
+      "buyer": "CTO, IT Manager, Data / Compliance",
+      "message": "Playbook ajustado por pais, porte e maturidade regulatoria.",
+      "kpi": "Pipeline por mercado e conversao de piloto para oportunidade."
+    }
+  ],
+  "challenge_coverage": [
+    {
+      "requirement": "Perfis dos potenciais clientes",
+      "status": "Coberto",
+      "evidence": "Categorias de cargo, share por persona e leitura de comprador tecnico/compliance.",
+      "artifact": "Power BI: Buyer Intelligence; Site: slide Personas."
+    },
+    {
+      "requirement": "Segmentacao por pais/regiao",
+      "status": "Coberto",
+      "evidence": "Ranking por pais, tiers de prioridade e mensagem por mercado.",
+      "artifact": "Power BI: Market Command; Site: slide Mercados."
+    },
+    {
+      "requirement": "Tamanho das empresas",
+      "status": "Coberto",
+      "evidence": "Buckets Startup / SMB, Mid-Market, Enterprise e share por porte.",
+      "artifact": "Power BI: Buyer Intelligence; Site: slide Porte."
+    },
+    {
+      "requirement": "Comportamento e interesses",
+      "status": "Inferido",
+      "evidence": "A planilha nao tem eventos; foram usados proxies firmograficos e sinal cross-border.",
+      "artifact": "Power BI: Border Signal; Site: slide Comportamento."
+    },
+    {
+      "requirement": "Barreiras e oportunidades",
+      "status": "Coberto",
+      "evidence": "GDPR, inercia do reCAPTCHA, friccao de UX e validacao comercial.",
+      "artifact": "Relatorio executivo; Site: slide Barreiras."
+    },
+    {
+      "requirement": "Dashboard interativo e relatorio",
+      "status": "Coberto",
+      "evidence": "PBIP versionavel, relatorio em Markdown, PDF publico e roteiro privado.",
+      "artifact": "Power BI + reports + presentation site."
+    }
+  ],
+  "glossary_terms": [
+    {
+      "term": "PBIP",
+      "category": "BI",
+      "definition": "Formato de projeto do Power BI que salva relatorio e modelo sem depender apenas de um arquivo binario PBIX.",
+      "in_project": "O relatorio versionavel esta em powerbi/hcaptcha-positioning/hcaptcha_report.pbip.",
+      "why_it_matters": "Permite revisar estrutura, paginas e modelo no Git, algo melhor para producao e manutencao."
+    },
+    {
+      "term": "Power BI",
+      "category": "BI",
+      "definition": "Ferramenta de business intelligence usada para criar modelos, medidas, filtros e dashboards interativos.",
+      "in_project": "O dashboard PBIP organiza Market Command, Buyer Intelligence, Border Signal e Action Map.",
+      "why_it_matters": "Atende o objetivo final do desafio: apoiar decisoes estrategicas por meio de um dashboard interativo."
+    },
+    {
+      "term": "ABM",
+      "category": "Comercial",
+      "definition": "Account-Based Marketing, estrategia de marketing e vendas focada em contas prioritarias em vez de abordagem massiva.",
+      "in_project": "A recomendacao usa ABM para concentrar esforco em Alemanha, Franca e Reino Unido antes de escalar.",
+      "why_it_matters": "Reduz dispersao comercial e aumenta a chance de validar a mensagem em contas de maior impacto."
+    },
+    {
+      "term": "ICP",
+      "category": "Comercial",
+      "definition": "Ideal Customer Profile, ou perfil de cliente ideal para priorizar mercado, porte, dor e potencial de compra.",
+      "in_project": "O ICP inicial combina mercados Tier 1, decisores tecnicos/compliance e contas enterprise ou mid-market qualificadas.",
+      "why_it_matters": "Ajuda a transformar uma lista de contatos em estrategia comercial acionavel."
+    },
+    {
+      "term": "Lead",
+      "category": "Comercial",
+      "definition": "Contato profissional que pode ser abordado em uma estrategia comercial.",
+      "in_project": "Cada lead representa um profissional associado a uma empresa europeia elegivel.",
+      "why_it_matters": "A contagem de leads mede alcance comercial, mas precisa ser analisada junto com empresas unicas."
+    },
+    {
+      "term": "Persona",
+      "category": "Comercial",
+      "definition": "Perfil de comprador ou influenciador usado para adaptar mensagem, argumento e canal de abordagem.",
+      "in_project": "Os cargos foram agrupados em categorias como Executive / Technical Decision Maker e Data / Compliance.",
+      "why_it_matters": "A hCaptcha precisa vender para tecnologia e compliance com argumentos diferentes."
+    },
+    {
+      "term": "Base gold",
+      "category": "Dados",
+      "definition": "Versao tratada e validada dos dados, pronta para analise, dashboard e defesa executiva.",
+      "in_project": "A base final tem 882 leads europeus elegiveis em 748 empresas, sem expor PII no site.",
+      "why_it_matters": "E a fonte confiavel para os indicadores de mercado, persona, porte e recomendacao."
+    },
+    {
+      "term": "Base raw",
+      "category": "Dados",
+      "definition": "Conjunto de dados no formato original, antes de tratamento, validacao ou padronizacao.",
+      "in_project": "A planilha inicial do desafio tinha 1.027 registros vindos da exportacao usada no exercicio da Snov.io.",
+      "why_it_matters": "Mostra o ponto de partida e deixa claro que a analise nao foi feita diretamente em dados brutos."
+    },
+    {
+      "term": "Quality gate",
+      "category": "Dados",
+      "definition": "Controle que verifica se uma etapa do pipeline atingiu criterios minimos de qualidade antes de seguir.",
+      "in_project": "O snapshot e o pipeline so sao usados na apresentacao quando a decisao de qualidade esta aprovada.",
+      "why_it_matters": "Aumenta confiabilidade da defesa e reduz risco de apresentar dado sujo."
+    },
+    {
+      "term": "Snapshot",
+      "category": "Dados",
+      "definition": "Copia estatica de um conjunto de dados em um momento especifico.",
+      "in_project": "O site usa presentation-snapshot.json para carregar dados anonimizados e agregados.",
+      "why_it_matters": "Garante que site, PDF e defesa usam a mesma versao dos dados."
+    },
+    {
+      "term": "Cross-border signal",
+      "category": "Metodologia",
+      "definition": "Sinal de operacao distribuida quando o pais do contato difere do pais principal da empresa.",
+      "in_project": "10,1% da base gold apresenta divergencia entre pais do contato e pais da empresa.",
+      "why_it_matters": "Ajuda a justificar mensagens de consistencia global, baixa friccao e conformidade multinacional."
+    },
+    {
+      "term": "ETL",
+      "category": "Metodologia",
+      "definition": "Processo de extrair dados de uma fonte, transformar esses dados com regras de limpeza e carregar o resultado em uma base pronta para analise.",
+      "in_project": "Pipeline Python que le a planilha original, limpa paises, cargos e porte, remove duplicidades e gera a base gold usada no Power BI e no site.",
+      "why_it_matters": "Sem ETL, a recomendacao ficaria vulneravel a registros duplicados, paises inconsistentes e cargos impossiveis de comparar."
+    },
+    {
+      "term": "Proxy firmografico",
+      "category": "Metodologia",
+      "definition": "Sinal indireto baseado em atributos da empresa ou do contato, usado quando a base nao tem comportamento direto medido.",
+      "in_project": "Cargo, pais, porte e divergencia pais do contato versus pais da empresa foram usados como proxies de propensao.",
+      "why_it_matters": "Deixa claro que comportamento e interesse foram inferidos, nao medidos por cliques ou visitas."
+    },
+    {
+      "term": "hCaptcha",
+      "category": "Produto",
+      "definition": "Solucao de protecao anti-bot e verificacao humana usada para proteger formularios, logins e fluxos digitais contra automacao abusiva.",
+      "in_project": "E a empresa/produto analisado no desafio de posicionamento europeu.",
+      "why_it_matters": "Define o objeto estrategico da analise: como entrar, para quem vender e com qual mensagem."
+    },
+    {
+      "term": "reCAPTCHA",
+      "category": "Produto",
+      "definition": "Servico anti-bot do Google usado para diferenciar humanos de automacoes em sites e formularios.",
+      "in_project": "A hCaptcha e posicionada como alternativa ao reCAPTCHA com apelo de privacidade, soberania e migracao tecnica.",
+      "why_it_matters": "E o concorrente e referencia de comparacao mais reconhecivel para a banca."
+    },
+    {
+      "term": "GDPR",
+      "category": "Regulacao",
+      "definition": "Regulamento Geral de Protecao de Dados da Uniao Europeia, base para exigencias de privacidade e tratamento de dados pessoais.",
+      "in_project": "A narrativa privacy-first usa GDPR como contexto de compra para mercados como Alemanha e Franca.",
+      "why_it_matters": "Explica por que privacidade pode ser diferencial competitivo na Europa."
+    }
+  ]
+}

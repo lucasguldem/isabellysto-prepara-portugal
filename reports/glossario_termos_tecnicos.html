@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Glossario tecnico - hCaptcha Europa</title>
+  <style>
+    @page { size: A4; margin: 13mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #182126;
+      background: #fffdf4;
+      font-family: "Cascadia Code", "JetBrains Mono", "Courier New", monospace;
+    }
+    header {
+      border: 4px solid #182126;
+      background: linear-gradient(135deg, #fff7dc, #dff5ee 58%, #ffe0d5);
+      box-shadow: 6px 6px 0 #182126;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    header p {
+      margin: 0;
+      line-height: 1.45;
+    }
+    section {
+      break-inside: avoid;
+      margin-bottom: 18px;
+    }
+    section > h1 {
+      width: max-content;
+      margin: 0 0 12px;
+      border: 3px solid #182126;
+      background: #f0b429;
+      box-shadow: 4px 4px 0 #182126;
+      padding: 6px 10px;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .term-card {
+      border: 3px solid #182126;
+      background: #fff9e8;
+      box-shadow: 5px 5px 0 #182126;
+      padding: 13px;
+      break-inside: avoid;
+    }
+    .term-card span {
+      display: block;
+      margin-bottom: 6px;
+      color: #2e68d6;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .term-card h2 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      line-height: 1.1;
+    }
+    .term-card p,
+    .term-card dd {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+    .term-card dl {
+      display: grid;
+      gap: 8px;
+      margin: 10px 0 0;
+    }
+    .term-card dt {
+      margin-bottom: 3px;
+      color: #7252b8;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Glossario tecnico</h1>
+    <p>Material de apoio para explicar os termos usados no dashboard, no relatorio e na apresentacao da estrategia de posicionamento da hCaptcha na Europa.</p>
+  </header>
+
+        <section>
+          <h1>BI</h1>
+          <div class="term-grid">
+    <article class="term-card">
+      <span>BI</span>
+      <h2>PBIP</h2>
+      <p>Formato de projeto do Power BI que salva relatorio e modelo sem depender apenas de um arquivo binario PBIX.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>O relatorio versionavel esta em powerbi/hcaptcha-positioning/hcaptcha_report.pbip.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Permite revisar estrutura, paginas e modelo no Git, algo melhor para producao e manutencao.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>BI</span>
+      <h2>Power BI</h2>
+      <p>Ferramenta de business intelligence usada para criar modelos, medidas, filtros e dashboards interativos.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>O dashboard PBIP organiza Market Command, Buyer Intelligence, Border Signal e Action Map.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Atende o objetivo final do desafio: apoiar decisoes estrategicas por meio de um dashboard interativo.</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+        </section>
+
+        <section>
+          <h1>Comercial</h1>
+          <div class="term-grid">
+    <article class="term-card">
+      <span>Comercial</span>
+      <h2>ABM</h2>
+      <p>Account-Based Marketing, estrategia de marketing e vendas focada em contas prioritarias em vez de abordagem massiva.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>A recomendacao usa ABM para concentrar esforco em Alemanha, Franca e Reino Unido antes de escalar.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Reduz dispersao comercial e aumenta a chance de validar a mensagem em contas de maior impacto.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>Comercial</span>
+      <h2>ICP</h2>
+      <p>Ideal Customer Profile, ou perfil de cliente ideal para priorizar mercado, porte, dor e potencial de compra.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>O ICP inicial combina mercados Tier 1, decisores tecnicos/compliance e contas enterprise ou mid-market qualificadas.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Ajuda a transformar uma lista de contatos em estrategia comercial acionavel.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>Comercial</span>
+      <h2>Lead</h2>
+      <p>Contato profissional que pode ser abordado em uma estrategia comercial.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>Cada lead representa um profissional associado a uma empresa europeia elegivel.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>A contagem de leads mede alcance comercial, mas precisa ser analisada junto com empresas unicas.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>Comercial</span>
+      <h2>Persona</h2>
+      <p>Perfil de comprador ou influenciador usado para adaptar mensagem, argumento e canal de abordagem.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>Os cargos foram agrupados em categorias como Executive / Technical Decision Maker e Data / Compliance.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>A hCaptcha precisa vender para tecnologia e compliance com argumentos diferentes.</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+        </section>
+
+        <section>
+          <h1>Dados</h1>
+          <div class="term-grid">
+    <article class="term-card">
+      <span>Dados</span>
+      <h2>Base gold</h2>
+      <p>Versao tratada e validada dos dados, pronta para analise, dashboard e defesa executiva.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>A base final tem 882 leads europeus elegiveis em 748 empresas, sem expor PII no site.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>E a fonte confiavel para os indicadores de mercado, persona, porte e recomendacao.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>Dados</span>
+      <h2>Base raw</h2>
+      <p>Conjunto de dados no formato original, antes de tratamento, validacao ou padronizacao.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>A planilha inicial do desafio tinha 1.027 registros vindos da exportacao usada no exercicio da Snov.io.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Mostra o ponto de partida e deixa claro que a analise nao foi feita diretamente em dados brutos.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>Dados</span>
+      <h2>Quality gate</h2>
+      <p>Controle que verifica se uma etapa do pipeline atingiu criterios minimos de qualidade antes de seguir.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>O snapshot e o pipeline so sao usados na apresentacao quando a decisao de qualidade esta aprovada.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Aumenta confiabilidade da defesa e reduz risco de apresentar dado sujo.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>Dados</span>
+      <h2>Snapshot</h2>
+      <p>Copia estatica de um conjunto de dados em um momento especifico.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>O site usa presentation-snapshot.json para carregar dados anonimizados e agregados.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Garante que site, PDF e defesa usam a mesma versao dos dados.</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+        </section>
+
+        <section>
+          <h1>Metodologia</h1>
+          <div class="term-grid">
+    <article class="term-card">
+      <span>Metodologia</span>
+      <h2>Cross-border signal</h2>
+      <p>Sinal de operacao distribuida quando o pais do contato difere do pais principal da empresa.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>10,1% da base gold apresenta divergencia entre pais do contato e pais da empresa.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Ajuda a justificar mensagens de consistencia global, baixa friccao e conformidade multinacional.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>Metodologia</span>
+      <h2>ETL</h2>
+      <p>Processo de extrair dados de uma fonte, transformar esses dados com regras de limpeza e carregar o resultado em uma base pronta para analise.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>Pipeline Python que le a planilha original, limpa paises, cargos e porte, remove duplicidades e gera a base gold usada no Power BI e no site.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Sem ETL, a recomendacao ficaria vulneravel a registros duplicados, paises inconsistentes e cargos impossiveis de comparar.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>Metodologia</span>
+      <h2>Proxy firmografico</h2>
+      <p>Sinal indireto baseado em atributos da empresa ou do contato, usado quando a base nao tem comportamento direto medido.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>Cargo, pais, porte e divergencia pais do contato versus pais da empresa foram usados como proxies de propensao.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Deixa claro que comportamento e interesse foram inferidos, nao medidos por cliques ou visitas.</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+        </section>
+
+        <section>
+          <h1>Produto</h1>
+          <div class="term-grid">
+    <article class="term-card">
+      <span>Produto</span>
+      <h2>hCaptcha</h2>
+      <p>Solucao de protecao anti-bot e verificacao humana usada para proteger formularios, logins e fluxos digitais contra automacao abusiva.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>E a empresa/produto analisado no desafio de posicionamento europeu.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Define o objeto estrategico da analise: como entrar, para quem vender e com qual mensagem.</dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="term-card">
+      <span>Produto</span>
+      <h2>reCAPTCHA</h2>
+      <p>Servico anti-bot do Google usado para diferenciar humanos de automacoes em sites e formularios.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>A hCaptcha e posicionada como alternativa ao reCAPTCHA com apelo de privacidade, soberania e migracao tecnica.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>E o concorrente e referencia de comparacao mais reconhecivel para a banca.</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+        </section>
+
+        <section>
+          <h1>Regulacao</h1>
+          <div class="term-grid">
+    <article class="term-card">
+      <span>Regulacao</span>
+      <h2>GDPR</h2>
+      <p>Regulamento Geral de Protecao de Dados da Uniao Europeia, base para exigencias de privacidade e tratamento de dados pessoais.</p>
+      <dl>
+        <div>
+          <dt>No projeto</dt>
+          <dd>A narrativa privacy-first usa GDPR como contexto de compra para mercados como Alemanha e Franca.</dd>
+        </div>
+        <div>
+          <dt>Por que importa</dt>
+          <dd>Explica por que privacidade pode ser diferencial competitivo na Europa.</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+        </section>
+
+</body>
+</html>

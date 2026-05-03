@@ -7,6 +7,7 @@ This repository contains a complete analytics engineering workflow for the hCapt
 - a tested Python ETL pipeline
 - a versionable Power BI Project (`PBIP`/`TMDL`)
 - an executive report with GTM recommendations
+- a public interactive presentation, a private presenter script, and a separate technical glossary PDF
 - operational extensions for automated ingestion, quality controls, and Power BI Service deployment readiness
 
 The core business question is: **how should hCaptcha position itself in the European market?**
@@ -20,7 +21,7 @@ flowchart LR
     C --> D[PBIP Semantic Model]
     D --> E[Power BI Desktop / Service]
     B --> F[Quality and Ops Logs]
-    C --> G[Executive Report and Figures]
+    C --> G[Executive Report, Presentation Snapshot and PDFs]
 ```
 
 ## Repository Structure
@@ -28,10 +29,10 @@ flowchart LR
 - `scripts/`: ETL pipeline, Power BI project generation, and operational automation
 - `tests/`: pytest coverage for transformation rules and operational scripts
 - `notebooks/`: exploratory and delivery notebook assets
-- `dashboards/`: PBIP project and dashboard blueprint
+- `powerbi/`: versionable Power BI Project (`PBIP`/`TMDL`)
+- `apps/`: presentation apps and web delivery surfaces
 - `reports/`: executive report plus generated figures and ops logs
-- `models/`: semantic-model notes
-- `docs/`: design specs, plans, and deployment runbooks
+- `docs/`: Power BI blueprints, semantic-model notes, design specs, plans, and deployment runbooks
 - `data/`: local-only raw and processed data directories kept out of Git by design
 
 ## Governance and Privacy
@@ -90,9 +91,22 @@ python scripts/watcher.py --config config/pipeline_settings.json
 
 ### 5. Open the Power BI Project
 
-Open `dashboards/hcaptcha_report/hcaptcha_report.pbip` in Power BI Desktop, refresh the model, and save a local `.pbix` if needed.
+Open `powerbi/hcaptcha-positioning/hcaptcha_report.pbip` in Power BI Desktop, refresh the model, and save a local `.pbix` if needed.
 
-### 6. Prepare the Power BI Service deployment kit
+### 6. Regenerate the presentation snapshot and PDF
+
+```bash
+python scripts/build_presentation_snapshot.py
+npm --prefix apps/hcaptcha-course-presentation run deck
+```
+
+Run the local presentation site:
+
+```bash
+npm --prefix apps/hcaptcha-course-presentation run dev -- --port 5174
+```
+
+### 7. Prepare the Power BI Service deployment kit
 
 Validate local prerequisites:
 
@@ -140,8 +154,9 @@ The repository currently contains:
 
 - the original hCaptcha market analysis implementation
 - the PBIP project used to materialize the dashboard in Power BI Desktop
+- the `apps/hcaptcha-course-presentation` interactive presentation backed by a sanitized Level 2 JSON snapshot
+- public PDF deck, private presenter script, and technical glossary artifacts generated from the same data source
 - operational design scaffolding for automated ingestion, quality gates, and Service refresh
-- the `sites/data-command-center` immersive 3D presentation site backed by a sanitized Level 2 JSON snapshot
 
 ## Notes
 

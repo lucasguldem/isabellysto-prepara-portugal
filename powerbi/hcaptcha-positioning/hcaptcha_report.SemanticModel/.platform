@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "hCaptcha Europe Positioning"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7d1a61c8-d30e-43c9-a4d4-5f3ee0a7d8d1"
+  }
+}

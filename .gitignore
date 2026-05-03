@@ -25,13 +25,17 @@ reports/ops/*
 *.pbit
 
 # Re-include versioned PBIP and local config JSONs even when a global gitignore blocks *.json
-!dashboards/**/*.json
-!dashboards/**/.pbixproj.json
-!dashboards/**/*.pbir
-!dashboards/**/*.pbidataset
-!dashboards/**/*.tmdl
+!powerbi/**/*.json
+!powerbi/**/.pbixproj.json
+!powerbi/**/*.pbir
+!powerbi/**/*.pbidataset
+!powerbi/**/*.tmdl
+!powerbi/**/*.pbism
+!powerbi/**/.platform
 !config/**/*.json
-!sites/**/*.json
+!apps/**/*.json
+powerbi/**/.pbi/localSettings.json
+powerbi/**/.pbi/*.abf
 
 # Local toolchains and environments
 tools/
