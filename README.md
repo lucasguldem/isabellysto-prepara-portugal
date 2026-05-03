@@ -16,13 +16,65 @@ The core business question is: **how should hCaptcha position itself in the Euro
 
 ```mermaid
 flowchart LR
-    A[Raw Snov.io CSV] --> B[Python ETL and Quality Gates]
-    B --> C[Gold CSVs and Dimensions]
-    C --> D[PBIP Semantic Model]
-    D --> E[Power BI Desktop / Service]
-    B --> F[Quality and Ops Logs]
-    C --> G[Executive Report, Presentation Snapshot and PDFs]
+    subgraph Source["Source Layer"]
+        A[Snov.io lead export<br/>local CSV]
+    end
+
+    subgraph Ingestion["Ingestion and Quality"]
+        B[Inbox watcher<br/>scripts/watcher.py]
+        C[ETL pipeline<br/>scripts/hcaptcha_pipeline.py]
+        D[Quality reports<br/>reports/quality]
+    end
+
+    subgraph Model["Analytics Model"]
+        E[Gold tables and dimensions<br/>data/processed]
+        F[Power BI semantic model<br/>PBIP / TMDL]
+        G[Versioned report definition<br/>powerbi/hcaptcha-positioning]
+    end
+
+    subgraph Delivery["Business Delivery"]
+        H[Power BI Desktop / Service]
+        I[Executive narrative<br/>reports]
+        J[Public presentation app<br/>apps/hcaptcha-course-presentation]
+        K[Static report snapshots<br/>reports/figures]
+    end
+
+    subgraph Ops["Governance and Operations"]
+        L[Deployment preflight<br/>scripts/pbi_preflight.py]
+        M[Gateway export<br/>scripts/export_gateway_ready.py]
+        N[Refresh automation<br/>scripts/pbi_refresh.py]
+        O[Tests<br/>pytest]
+    end
+
+    A --> B --> C
+    C --> D
+    C --> E --> F --> G --> H
+    E --> I
+    E --> J
+    E --> K
+    E --> M
+    L --> H
+    M --> H
+    N --> H
+    O --> C
+    O --> L
 ```
+
+## Report Snapshots
+
+These PNG snapshots make the main analytical outputs visible directly in GitHub. The complete interactive report remains versioned as a Power BI Project at [`powerbi/hcaptcha-positioning/hcaptcha_report.pbip`](powerbi/hcaptcha-positioning/hcaptcha_report.pbip), while the static figures live under [`reports/figures/`](reports/figures/).
+
+### Market Priority by Country
+
+<img src="reports/figures/01_market_overview_top_countries.png" alt="Top European markets by eligible lead volume" width="100%"/>
+
+### Persona and Company Size Mix
+
+<img src="reports/figures/02_icp_role_size_heatmap.png" alt="Persona mix by company size segment" width="100%"/>
+
+### Cross-Border Signal
+
+<img src="reports/figures/03_cross_border_signal.png" alt="Markets with strongest distributed operation signal" width="100%"/>
 
 ## Repository Structure
 
