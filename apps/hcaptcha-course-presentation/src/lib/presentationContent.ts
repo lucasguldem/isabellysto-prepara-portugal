@@ -189,7 +189,7 @@ if (slideId === 'challenge') {
   }
 
 if (slideId === 'data') {
-    return `A análise partiu de uma base raw de 1.027 registros e chegou a ${formatNumber(snapshot.metadata.source_rows)} leads europeus elegíveis em ${formatNumber(snapshot.metadata.unique_companies)} empresas. O pipeline de tratamento incluiu: normalização geográfica (distinguindo país da empresa do país do contato), harmonização de cargos em categorias de decisão (Executive / Technical, Data / Compliance, Security / Risk, IT Management, Individual Contributor), bucketização de porte (Enterprise, Mid-Market, Startup / SMB), deduplicação por E-mail + Nome da empresa, e filtragem por países europeus elegíveis. A redução de ruído total foi de 14,1%, validando a qualidade da base gold. Isso torna a leitura comercial confiável e evita conclusões tiradas de uma planilha bruta sem tratamento.`;
+    return `A análise partiu de uma base raw de 1.027 registros e chegou a ${formatNumber(snapshot.metadata.source_rows)} leads europeus elegíveis em ${formatNumber(snapshot.metadata.unique_companies)} empresas. O pipeline de tratamento incluiu: normalização geográfica (distinguindo país da empresa do país do contato), harmonização de cargos em categorias de decisão (Executive / Technical, Data / Compliance, Security / Risk, IT Management, Individual Contributor), bucketização de porte (Startup / SMB até 50, Mid-Market até 250, Enterprise acima de 250), deduplicação por E-mail + Nome da empresa, e filtragem por empresas europeias. O status do e-mail foi preservado como atributo de qualidade, não como filtro rígido da análise. A redução de ruído total foi de 14,1%, o que evita conclusões tiradas de uma planilha bruta sem tratamento.`;
   }
 
 if (slideId === 'market') {

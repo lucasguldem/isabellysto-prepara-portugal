@@ -12,6 +12,64 @@ This repository contains a complete analytics engineering workflow for the hCapt
 
 The core business question is: **how should hCaptcha position itself in the European market?**
 
+## Relatório Analítico
+
+Este README segue a mesma lógica de entrega de um repositório profissional de desafio de dados: documenta a base raw, as regras de tratamento, os controles de qualidade, os outputs do dashboard e a interpretação de negócio em uma página visível no GitHub.
+
+### Descrição do Dataset
+
+A análise parte da planilha original do desafio, mantida localmente como [`Planilha - Desafio de Dados - Página1.csv`](Planilha%20-%20Desafio%20de%20Dados%20-%20P%C3%A1gina1.csv) e espelhada em `data/raw/` para garantir reprodutibilidade.
+
+| Camada | Linhas | Colunas / Escopo | Observações |
+| --- | ---: | --- | --- |
+| Planilha raw | 1.027 | 24 colunas originais | Atributos profissionais e empresariais da exportação de leads. |
+| Base gold | 882 | 27 colunas harmonizadas | Dados deduplicados, normalizados e filtrados para empresas europeias. |
+| Empresas no escopo | 748 | Empresas únicas | Base para leitura de contas e priorização de ABM. |
+| Dimensão de país | 13 países | Ranking de mercado e tiers | Usada pelo Power BI e pelo snapshot público da apresentação. |
+
+O arquivo raw contém campos pessoais e empresariais como e-mail, status do e-mail, nome do contato, cargo, país do contato, nome da empresa, porte da empresa, país da empresa, cidade da empresa, setor da empresa e classificação. A análise pública evita expor dados pessoais nos artefatos de apresentação; o Power BI e o site usam agregações, dimensões e snapshots sanitizados.
+
+### Tratamento e Harmonização
+
+O pipeline em [`scripts/hcaptcha_pipeline.py`](scripts/hcaptcha_pipeline.py) aplica as mesmas regras usadas pelo notebook, pelo modelo Power BI e pela apresentação pública:
+
+| Etapa | O que acontece | Motivo analítico |
+| --- | --- | --- |
+| Padronização de colunas | As colunas originais em português são mapeadas para nomes analíticos estáveis. | Mantém Power BI, notebook e scripts usando o mesmo schema. |
+| Deduplicação | Mantém a melhor linha por `E-mail + Nome da empresa`, priorizando status do e-mail e completude. | Evita dupla contagem do mesmo par contato/empresa. |
+| Normalização geográfica | Usa `País da empresa` como lente de mercado e preserva `País` como geografia do contato. | O país da empresa é a referência correta para posicionamento comercial. |
+| Filtro europeu | Mantém empresas cujo país normalizado é europeu. | Alinha a análise ao desafio de posicionamento na Europa. |
+| Agrupamento de cargos | Mapeia cargos raw para categorias como `Executive / Technical Decision Maker` e `Data / Compliance`. | Transforma cargos ruidosos em personas de compra. |
+| Buckets de porte | `Startup / SMB` até 50, `Mid-Market` até 250, `Enterprise` acima de 250, além de `Unknown`. | Torna o porte comparável mesmo com faixas raw inconsistentes. |
+| Status do e-mail | Preserva o status original e marca `is_email_valid` quando o status é `valid`. | A análise não remove `unknown` ou `not valid`; o status permanece como atributo de qualidade. |
+
+### Qualidade e Linhagem
+
+O último quality gate está aprovado e registra a linhagem atual da planilha raw até os outputs Gold:
+
+| Métrica | Valor | Interpretação |
+| --- | ---: | --- |
+| Linhas raw | 1.027 | Ponto de partida da planilha original do desafio. |
+| Linhas Gold | 882 | Linhas após deduplicação e filtro por empresa europeia. |
+| Linhas removidas | 145 | Redução de 14,1% da base raw para a Gold. |
+| Linhas duplicadas por contato/empresa no raw | 203 | Warning de qualidade monitorado pelo pipeline. |
+| Linhas exatamente duplicadas no raw | 2 | Registros totalmente duplicados na planilha original. |
+| Linhas sem país europeu da empresa | 33 | Registros fora da lente de mercado europeia. |
+| Contatos cross-border | 89 | País do contato diferente do país da empresa. |
+| Taxa cross-border | 10,1% | Proxy de operação distribuída ou internacional. |
+| Status do e-mail na Gold | 456 valid / 243 unknown / 183 not valid | Contexto de qualidade preservado, não filtro rígido da análise. |
+
+O mirror do gateway Power BI em `C:\Users\02luc\Documents\PowerBIData\hcaptcha\processed` contém os mesmos quatro CSVs processados de `data/processed/`, verificados por hash durante a auditoria.
+
+### Principais Achados Estratégicos
+
+| Achado | Evidência | Implicação |
+| --- | --- | --- |
+| Concentração geográfica alta | Germany, United Kingdom, France, Spain e Portugal concentram 88,4% dos leads Gold. | Começar com GTM focado em Tier 1, sem dispersar a entrada europeia. |
+| Personas de compra claras | Executive / Technical Decision Maker representa 41,3%; Data / Compliance representa 36,7%. | A mensagem precisa de uma trilha técnica e outra de privacidade/compliance. |
+| Enterprise é o maior segmento | Enterprise representa 42,7%; Mid-Market 27,6%; Startup / SMB 29,1%. | Provar valor em contas maiores e depois escalar para mid-market e SMB. |
+| Comportamento é inferido | A fonte não possui cliques, stack, visitas ou eventos de intenção. | Usar proxies firmográficos e declarar essa limitação com clareza. |
+
 ## Architecture
 
 ```mermaid
@@ -60,21 +118,21 @@ flowchart LR
     O --> L
 ```
 
-## Report Snapshots
+## Dashboard e Snapshots
 
-These PNG snapshots make the main analytical outputs visible directly in GitHub. The complete interactive report remains versioned as a Power BI Project at [`powerbi/hcaptcha-positioning/hcaptcha_report.pbip`](powerbi/hcaptcha-positioning/hcaptcha_report.pbip), while the static figures live under [`reports/figures/`](reports/figures/).
+As imagens abaixo deixam os principais outputs analíticos visíveis diretamente no GitHub. O relatório interativo completo continua versionado como Power BI Project em [`powerbi/hcaptcha-positioning/hcaptcha_report.pbip`](powerbi/hcaptcha-positioning/hcaptcha_report.pbip), enquanto as figuras estáticas ficam em [`reports/figures/`](reports/figures/).
 
-### Market Priority by Country
+### Prioridade de Mercado por País
 
-<img src="reports/figures/01_market_overview_top_countries.png" alt="Top European markets by eligible lead volume" width="100%"/>
+<img src="reports/figures/01_market_overview_top_countries.png" alt="Top mercados europeus por volume de leads elegíveis" width="100%"/>
 
-### Persona and Company Size Mix
+### Mix de Personas por Porte de Empresa
 
-<img src="reports/figures/02_icp_role_size_heatmap.png" alt="Persona mix by company size segment" width="100%"/>
+<img src="reports/figures/02_icp_role_size_heatmap.png" alt="Mix de personas por porte de empresa" width="100%"/>
 
-### Cross-Border Signal
+### Sinal Cross-Border
 
-<img src="reports/figures/03_cross_border_signal.png" alt="Markets with strongest distributed operation signal" width="100%"/>
+<img src="reports/figures/03_cross_border_signal.png" alt="Mercados com maior sinal de operação distribuída" width="100%"/>
 
 ## Repository Structure
 

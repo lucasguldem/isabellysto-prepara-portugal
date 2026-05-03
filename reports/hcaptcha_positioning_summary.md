@@ -4,7 +4,7 @@
 
 O objetivo desta análise foi definir como a hCaptcha deve se posicionar no mercado europeu a partir de uma base de leads B2B do setor de tecnologia. A conclusão central é que a entrada na Europa deve seguir um modelo de **duplo impacto**, combinando privacidade como diferencial regulatório e eficiência técnica como alavanca de adoção escalável.
 
-Este relatório utiliza uma base de dados raw (dados originais sem tratamento) de 1.027 registros, que passou por um processo rigoroso de tratamento (ETL), deduplicação e harmonização para gerar uma base gold (dados processados e validados no mais alto nível de qualidade) de 882 leads europeus elegíveis distribuídos em 748 empresas únicas. A arquitetura analítica foi organizada em um modelo de dimensões (tabelas de referência para países, portes e categorias de cargo) complementares ao dataset principal, permitindo análises cross-dimensional em Power BI sem ambiguidade de granularidade (grain - nível de detalhe de cada registro).
+Este relatório utiliza uma base de dados raw (dados originais sem tratamento) de 1.027 registros, que passou por um processo rigoroso de tratamento (ETL), deduplicação, harmonização e aprovação em quality gate para gerar uma base gold de 882 leads europeus elegíveis distribuídos em 748 empresas únicas. A arquitetura analítica foi organizada em um modelo de dimensões (tabelas de referência para países, portes e categorias de cargo) complementares ao dataset principal, permitindo análises cross-dimensional em Power BI sem ambiguidade de granularidade (grain - nível de detalhe de cada registro).
 
 A análise revelou que os cinco maiores mercados concentram 88,4% dos leads elegíveis: Germany (277 leads), United Kingdom (174 leads), France (166 leads), Spain (101 leads) e Portugal (62 leads). Esta concentração permite uma estratégia inicial altamente focada, evitando dispersão comercial prematura e permitindo validação rápida das hipóteses antes de expansão para mercados menores.
 
@@ -24,23 +24,24 @@ O processo de tratamento de dados seguiu uma sequência estruturada de etapas, c
 
 - **Normalização de cargos (role_category):** Os cargos originais dos contatos foram mapeados para categorias padronizadas de decisão comercial. Esta normalização foi necessária porque a mesma função pode ser descrita de formas diferentes em diferentes empresas (ex: "Head of Data", "Chief Data Officer", "Director of Data" foram todos mapeados para a categoria `Data / Compliance`). As categorias finais utilizadas foram: `Executive / Technical Decision Maker`, `Data / Compliance`, `Security / Risk`, `IT / Engineering Management`, `Individual Contributor / Specialist` e `Other`.
 
-- **Bucketização de porte empresarial (company_size_segment):** Os tamanhos de empresa raw foram convertidos em segmentos padronizados: `Startup / SMB` (1-50 funcionários), `Mid-Market` (51-500 funcionários), `Enterprise` (501+ funcionários) e `Unknown` (quando não foi possível determinar). Esta bucketização permite análises por porte sem a granularidade excessiva dos dados originais.
+- **Bucketização de porte empresarial (company_size_segment):** Os tamanhos de empresa raw foram convertidos em segmentos padronizados: `Startup / SMB` (até 50 funcionários), `Mid-Market` (51-250 funcionários), `Enterprise` (acima de 250 funcionários) e `Unknown` (quando não foi possível determinar). Esta bucketização segue a regra implementada no pipeline e permite análises por porte sem a granularidade excessiva dos dados originais.
 
-- **Detecção de e-mail inválido:** O campo `is_email_valid` foi populado com base em validação sintática de formatos de e-mail, permitindo filtrar leads não acionáveis (leads com e-mail inválido não podem ser abordados comercialmente).
+- **Preservação do status do e-mail:** O campo `is_email_valid` foi populado a partir do status original do e-mail (`valid`, `unknown`, `not valid`). Esse campo funciona como atributo de qualidade: a base gold não remove automaticamente registros `unknown` ou `not valid`, porque o objetivo principal desta análise é posicionamento de mercado e não execução imediata de campanha.
 
 **Etapa 3 - Deduplicação e Garantia de Unicidade:** A garantia de unicidade foi implementada utilizando a combinação `E-mail + Nome da empresa` como chave de deduplicação. Esta abordagem foi escolhida em preferência a deduplicação apenas por e-mail porque uma mesma pessoa pode estar associada a múltiplas empresas (ex: conselheiros, investidores, consultores), e deduplicação apenas por empresa ignoraria contactos duplicados na mesma organização. O resultado foi uma redução de duplicatas que contribuiu para os 14,1% de redução de ruído total.
 
-**Etapa 4 - Filtragem Geográfica:** A filtragem por empresa europeia foi aplicada utilizando o campo `is_european_company`, que foi populado com base na lista de países elegíveis: Germany, United Kingdom, France, Spain, Portugal, Poland, Belgium, Ireland, Lithuania, Estonia, Italy, Netherlands e Switzerland. Registros de empresas fora desta lista foram excluídos da análise principal.
+**Etapa 4 - Filtragem Geográfica:** A filtragem por empresa europeia foi aplicada utilizando o campo `is_european_company`. A lista de países elegíveis é mantida no pipeline; os países efetivamente presentes na base gold são Germany, United Kingdom, France, Spain, Portugal, Poland, Belgium, Ireland, Lithuania, Estonia, Italy, Netherlands e Switzerland. Registros de empresas fora do escopo europeu ou sem país da empresa foram excluídos da análise principal.
 
 ### 2.2 Métricas de Qualidade
 
 | Métrica | Valor | Interpretação |
 |---------|-------|---------------|
 | Base bruta original | 1.027 registros | Total de linhas no arquivo raw importado |
-| Leads europeus elegíveis | 882 leads | Após filtragem geográfica e validação de e-mail |
+| Leads europeus elegíveis | 882 leads | Após deduplicação e filtragem por empresa europeia |
 | Empresas únicas | 748 empresas | Após deduplicação por E-mail + Empresa |
 | Redução de ruído total | 14,1% | (1.027 - 882) / 1.027 - percentual de registros removidos |
 | Taxa de mismatch (cross-border) | 10,1% | Contatos em país diferente da empresa |
+| Status do e-mail na base gold | 456 valid / 243 unknown / 183 not valid | Atributo preservado para qualificação, não filtro rígido da análise |
 
 ### 2.3 Arquitetura do Modelo de Dados
 
@@ -219,7 +220,7 @@ Este glossário define os principais termos técnicos utilizados neste relatóri
 
 - **Harmonização:** Processo de padronização de dados que podem ter formatos diferentes em fontes diferentes (ex: diferentes formas de escrever o mesmo país ou cargo).
 
-- **Quality gate:** Ponto de validação no pipeline que verifica se os dados atendem a critérios mínimos de qualidade. Registros que não passam no quality gate são direcionados para quarantine em vez de seguir para a base gold.
+- **Quality gate:** Ponto de validação no pipeline que verifica se uma carga de dados atende a critérios mínimos de qualidade. Cargas que não passam no quality gate são direcionadas para quarantine em vez de substituir a base gold aprovada.
 
 - **Grain (granularidade):** Nível de detalhe de um dataset. No Power BI, definir o grain corretamente é fundamental para evitar contagens duplas ou métricas incorretas em agregações.
 
@@ -229,7 +230,7 @@ Este glossário define os principais termos técnicos utilizados neste relatóri
 
 ### Termos Comerciais e de Segmentação
 
-- **Lead:** Contato profissional na base de dados. Cada registro na base gold representa um lead válido (e-mail válido e empresa europeia).
+- **Lead:** Contato profissional na base de dados. Cada registro na base gold representa um lead elegível para análise de posicionamento por estar associado a uma empresa europeia; o status do e-mail é preservado como atributo de qualidade.
 
 - **ABM (Account-Based Marketing):** Estratégia de marketing que foca em contas específicas (empresas) em vez de leads individuais. No contexto deste projeto, ABM significa direcionar esforços comerciais para empresas específicas nos mercados prioritários.
 

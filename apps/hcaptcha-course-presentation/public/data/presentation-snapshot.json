@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-05-03T10:16:58Z",
+    "generated_at": "2026-05-03T18:02:30Z",
     "privacy_level": "Level 1: Aggregates + Anonymous Companies",
     "source_rows": 882,
     "unique_companies": 748,
@@ -6286,7 +6286,7 @@
     },
     {
       "level": "INFO",
-      "message": "Este relatório utiliza uma base de dados raw (dados originais sem tratamento) de 1.027 registros, que passou por um processo rigoroso de tratamento (ETL), deduplicação e harmonização para gerar uma base gold (dados pr..."
+      "message": "Este relatório utiliza uma base de dados raw (dados originais sem tratamento) de 1.027 registros, que passou por um processo rigoroso de tratamento (ETL), deduplicação, harmonização e aprovação em quality gate para ge..."
     },
     {
       "level": "INFO",
@@ -6314,7 +6314,7 @@
     },
     {
       "level": "INFO",
-      "message": "**Etapa 4 - Filtragem Geográfica:** A filtragem por empresa europeia foi aplicada utilizando o campo is_european_company, que foi populado com base na lista de países elegíveis: Germany, United Kingdom, France, Spain,..."
+      "message": "**Etapa 4 - Filtragem Geográfica:** A filtragem por empresa europeia foi aplicada utilizando o campo is_european_company. A lista de países elegíveis é mantida no pipeline; os países efetivamente presentes na base gol..."
     }
   ],
   "adoption_signals": [
